@@ -1,5 +1,6 @@
 if (Meteor.isClient) {
  Meteor.subscribe('theAList');
+ Meteor.subscribe('thePList');    
     Meteor.subscribe('theAList');
  Session.setDefault("limit",6);
     Deps.autorun (function ()  {

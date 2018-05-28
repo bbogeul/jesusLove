@@ -21,6 +21,26 @@ AboutChurch.attachSchema(new SimpleSchema({
     }
   } 
   }));
+PrayerList = new Mongo.Collection("PrayerList");
+PrayerList.attachSchema(new SimpleSchema({
+ 
+    title: {
+    optional: true,
+    type: String,
+    label: "기도제목"
+}, 
+    content: {
+    optional: true,
+    type: String,
+    label: "기도 내용"
+},
+  createdAt: {
+    type: Date,
+    autoValue: function () {
+      return new Date();
+    }
+  } 
+  }));
 AddJubo = new Mongo.Collection("addJubo");
 AddJubo.attachSchema(new SimpleSchema({
   title: {
@@ -352,6 +372,17 @@ words: {
   } 
   }));
 AboutChurch.allow({
+  insert: function (userId, doc) {
+    return true;
+  },
+  update: function (userId, doc, fields, modifier) {
+    return true;
+  },
+  remove: function (userId, doc) {
+    return true;
+  }
+});
+PrayerList.allow({
   insert: function (userId, doc) {
     return true;
   },

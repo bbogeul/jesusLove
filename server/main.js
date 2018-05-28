@@ -46,6 +46,9 @@ Meteor.publish('allUsers', function() {
 
  Meteor.publish('theQList', function(limitCount) {
     return qtWords.find({},{limit:6,limit:limitCount});
+});  
+ Meteor.publish('thePList', function( ) {
+    return PrayerList.find({});
 });     
   Meteor.publish('theSr1List', function() {
     return Sermon1.find({});
