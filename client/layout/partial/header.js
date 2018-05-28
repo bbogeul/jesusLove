@@ -3,6 +3,7 @@ Template.header.rendered = function() {
      $(".button-collapse").sideNav({closeOnClick: true});
     $(".menuOpen").sideNav();
      $(".menuOpen").sideNav({closeOnClick: true});
+     $(".topButton").sideNav({closeOnClick: true});
    
 }
 Template.loginList.rendered = function() {

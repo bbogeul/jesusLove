@@ -12,8 +12,14 @@
   z-index: 2;
   bottom: 60px;
 }
+ 
+
+.drag-target.right-aligned {
+  right: 0;
+}
 #sidenav-overlay {
-display: none;
+ 
+  display: none;
 }
 .slider .indicators {
   position: absolute;
