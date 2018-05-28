@@ -2,7 +2,7 @@ Router.route 'Users',
   template: 'Users'
   path: '/users'
   title: ''
-  layoutTemplate: 'appLayout2'
+  layoutTemplate: 'dashboardLayout'
   meta:
     url:
       property: 'og:url'

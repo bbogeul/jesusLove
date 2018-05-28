@@ -1,18 +1,42 @@
 <template name="dashboard">
- <div class="">
-     <h3 class="grey-text text-darken-3 myeong">관리자 페이지로 오신 것을 환영합니다</h3>
-     <div class="divider"></div>
-     <div class="">
-      <p class="myeong"><b>관리자패널 사용법</b></p>
-      <ol>
-          <li><a href="{{pathFor 'editIntro'}}">사이트 내용 수정</a>
-          <ul>
-              <li>a. 사이트 내용 수정 페이지는 사이트의 Contents (내용)들을 쉽게 수정할 수 있는 페이지입니다.</li>
-              <li>b. 사이트 내용 수정 페이지는 "환영합니다" 및 "소개합니다" 섭섹션들 위주로 수정 가능합니다. (환영합니다, 새가족등록안내, 새가족교육, 소개합니다 페이지들입니다). </li>
-          </ul>
-          </li>
-      </ol>
-     </div>
+<div class=" ">
+         <h2 class="myeong bold">사이트 관리</h2>
+    <div class="divider"></div>
+    <div class="row" style="margin-top:1em;">
+        <div class="col s12 m6 l6">
+           <a href="{{pathFor 'editWelcome'}}">
+            <div class="border">
+                <div class="center">
+                  <i class="fa fa-edit fa-4x blue-text text-lighten-2"></i>
+<br>목사님 소개 수정
+                </div>
+            </div>
+            </a>
+        </div>
+           <div class="col s12 m6 l6">
+           <a href="{{pathFor 'addJuboList'}}">
+            <div class="border">
+                <div class="center">
+                  <i class="fa fa-list fa-4x blue-text text-lighten-2"></i>
+<br>주보 내용 변겅
+                </div>
+            </div>
+            </a>
+        </div>    
+    </div>
+    <br>
+    <div class="row">
+       <div class="col s12 m6 l6">
+           <a href="/users">
+            <div class="border">
+                <div class="center">
+                  <i class="fa fa-users fa-4x blue-text text-lighten-2"></i>
+<br>유저들 보기
+                </div>
+            </div>
+            </a>
+        </div>       
+    </div>
  </div>
 </template>
 <template name="noAuth">

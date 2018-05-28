@@ -1,24 +1,24 @@
 <template name="Users">
 	{{#if isInRole 'admin'}}
 	<div class="container">
-		<h1 class="grey-text text-darken-2">Users</h1>
+		<h1 class="grey-text text-darken-2">사용자 명단</h1>
 		<br>
 		
 		 <br>
-		You will not appear below. 
-		 <table class="table ">
-		 <tr class="headerTable">
+		관리자들은 안보입니다.
+		 <table class="striped responsive-table">
+		 <tr>
 		 	<th>ID</th>
-		 	<th>First Name</th>
-		 	<th>Email</th>
+		 	<th>이름</th>
+		 	<th>이메일</th>
 		 	 
-		 	<th>Phone #</th>
-		 	<th>Created At</th>
+		 	<th>전화번호</th>
+		 	<th>생성날짜 </th>
 		 	<th>Status</th>
 		 	<th>*</th>
 		  </tr>
 		{{#each users}}
- <tbody class="table table-striped">
+ <tbody >
  	<td class="user_id blue-text pt">{{_id}}</td>
  	<td>{{profile.firstName}} {{profile.lastName}}</td>
  	<td>{{userEmail}}</td>
