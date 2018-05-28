@@ -43,9 +43,14 @@
      {{#if currentUser}}
         <div class="center">
           <li class="blue"><b>  {{lastName}}{{firstName}}님</b> 환영합니다</li>
+          {{#if isInRole 'admin'}}
+            <li><a href="/dashboard" class="btn white-text">관리자패널</a></li>
+          {{/if}}
           <li><a href="" class="btn logout white-text red">로그아웃</a></li>
          
         </div>
+        {{else}}
+        <li><a href="{{pathFor 'loginPage'}}" class="btn">로그인</a></li>
         {{/if}}
     </section>
    
