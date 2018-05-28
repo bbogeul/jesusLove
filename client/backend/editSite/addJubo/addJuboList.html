@@ -1,0 +1,245 @@
+<template name="addJuboList">
+        <h2 class="myeong bold">주보내용 추가 및 수정</h2>
+    <div class="divider"></div>
+    
+<div class="row">
+    <div class="col l8">
+         <ul class="collapsible">
+       <li>
+           <div class="collapsible-header center bold">주일주보수정</div>
+           <div class="collapsible-body">
+            <div class="container">
+                  {{#autoForm collection="AddJubo"
+      id="insertJubo"
+      type="method"
+      meteormethod="submitAddListing"
+      omitFields="createdAt" autosave="false"}}
+      <br>
+       <div class="border">
+        {{> afQuickField name='title'}}
+    </div>
+      <div class="border">
+        {{> afQuickField name='speaker'}}
+    </div>
+      <div class="border">
+        {{> afQuickField name='content'}}
+    </div>
+     <div class="center" style="margin-top:1em;">
+            <button type="submit" class="btn blue white-text">추가</button>
+        </div>
+      <br><br>
+      {{/autoForm}}
+            </div>
+           </div>
+       </li>
+       <li>
+           <div class="collapsible-header center bold">수요주보수정</div>
+           <div class="collapsible-body">
+            <div class="container">
+                  {{#autoForm collection="AddJubo2"
+      id="insertJubo2"
+      type="method"
+      meteormethod="submitAddListing2"
+      omitFields="createdAt" autosave="false"}}
+      <br>
+       <div class="border">
+        {{> afQuickField name='title'}}
+    </div>
+      <div class="border">
+        {{> afQuickField name='speaker'}}
+    </div>
+      <div class="border">
+        {{> afQuickField name='content'}}
+    </div>
+     <div class="center" style="margin-top:1em;">
+            <button type="submit" class="btn blue white-text">추가</button>
+        </div>
+      <br><br>
+      {{/autoForm}}
+            </div>
+           </div>
+       </li>
+    <li>
+        <div class="collapsible-header center bold">추가정보 수정 * (식당번/주일기도/헌금 등)</div>
+        <div class="collapsible-body">
+           <div class="container">
+                {{#autoForm collection="ServiceMembers"
+      id="insertServiceMembers"
+      type="method"
+      meteormethod="submitServiceMembers"
+      omitFields="createdAt" autosave="false"}}
+      <br>
+      <div class="row">
+          <div class="col l6">
+              {{> afQuickField name="month1"}}
+          </div>
+          <div class="col l6">
+              {{> afQuickField name="month2"}}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col l6">
+               <div class="border">
+          {{> afQuickField name="prayer1"}}
+      </div>
+          </div>
+          <div class="col l6">
+            <div class="border">
+          {{> afQuickField name="prayer2"}}
+      </div>   
+          </div>
+      </div>
+      <div class="row">
+          <div class="col l6">
+        {{> afQuickField name="bongHun1"}}
+          </div>
+          <div class="col l6">
+        {{> afQuickField name="bongHun2"}}
+          </div>
+      </div>
+     <div class="row">
+          <div class="col l6">
+        {{> afQuickField name="serviceMember1"}}
+          </div>
+          <div class="col l6">
+        {{> afQuickField name="serviceMember2"}}
+          </div>
+      </div>
+       <div class="center" style="margin-top:1em;">
+            <button type="submit" class="btn blue white-text">추가</button>
+        </div>
+      <br><br>
+       {{/autoForm}}
+           </div>
+        </div>
+    </li>
+   </ul>
+    </div>
+    <div class="col l4">
+         {{#autoForm collection="DateForService"
+      id="insertDateForService"
+      type="method"
+      meteormethod="submitServiceDate"
+      omitFields="createdAt" autosave="false"}}
+      <div class="border">
+          {{> afQuickField name="dateDate"}}
+      </div>
+      <div class="center" style="margin-top:1em;">
+            <button type="submit" class="btn blue white-text">변경</button>
+        </div>
+      {{/autoForm}}
+    </div>
+</div>
+    
+    <div class="">
+         {{> dateLine}}
+        <table class="table-responsive striped centered">
+            <thead>
+                <tr>
+                    <td class="center">구분</td>
+                    <td class="center">안내위원</td>
+                    <td class="center">봉헌위원</td>
+                    <td class="center">기도</td>
+                </tr>
+            </thead>
+            <tbody>
+               {{#each ServiceMembers}}
+                <tr>
+                    <td>{{month1}}월</td>
+                    <td>{{serviceMember1}}</td>
+                    <td>{{bongHun1}}</td>
+                    <td>금주: {{prayer1}}</td>
+                </tr>
+                <tr>
+                    <td>{{month2}}월</td>
+                    <td>{{serviceMember2}}</td>
+                    <td>{{bongHun2}}</td>
+                    <td>내주: {{prayer2}}</td>
+                </tr>
+               {{/each}}
+            </tbody>
+        </table>
+        <br>
+         <div class="borderLine"></div>
+         <br>
+         <div class="center">
+             <h4>주일예배 주보</h4>
+         </div>
+          <table  class="table-responsive  striped centered scheduleTable">
+        <thead>
+          <tr>
+                <td class="center">제목</td>
+            <td class="center">내용</td>
+            <td class="center">Speaker</td>
+            <td class="center">수정/삭제</td>
+          </tr>
+        </thead>
+
+        <tbody >
+       
+        {{#each AddJubo}}
+          
+          <tr>
+            <td class="center">{{title}}</td>
+            
+            <td class="center">{{speaker}}</td>
+            <td class="center">{{content}}</td>
+            <td class="center"><a href="{{pathFor 'editJubo.show'}}" class="btn green">수정</a> <span href="#" class="btn red removeJubo">X</span></td>
+         
+          </tr>
+             
+          {{else}}
+          <div class="center">
+              주보내용이 없습니다. 지금 바로 추가하세요. 
+          </div>
+          {{/each}}
+       
+        </tbody>
+      </table>
+       <div class="borderLine"></div>
+         <br>
+         <div class="center">
+             <h4>수요예배 주보</h4>
+         </div>
+          <table  class="table-responsive  striped centered scheduleTable">
+        <thead>
+          <tr>
+                <td class="center">제목</td>
+            <td class="center">내용</td>
+            <td class="center">Speaker</td>
+            <td class="center">수정/삭제</td>
+          </tr>
+        </thead>
+
+        <tbody >
+       
+        {{#each AddJubo2}}
+          
+          <tr>
+            <td class="center">{{title}}</td>
+            
+            <td class="center">{{speaker}}</td>
+            <td class="center">{{content}}</td>
+            <td class="center"><a href="{{pathFor 'editJubo2.show'}}" class="btn green">수정</a> <span href="#" class="btn red removeJubo2">X</span></td>
+         
+          </tr>
+             
+          {{else}}
+          <div class="center">
+              주보내용이 없습니다. 지금 바로 추가하세요. 
+          </div>
+          {{/each}}
+       
+        </tbody>
+      </table>
+   </div>
+</template>
+<template name="dateLine">
+    <div class="center">
+             {{#each DateForService}}
+             <p class="flow-text bold center">주일날짜: {{dateDate}}</p>
+             {{else}}
+             날짜 없습니다
+             {{/each}}
+         </div>
+</template>

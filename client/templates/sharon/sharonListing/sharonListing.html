@@ -1,0 +1,28 @@
+<template name="sharonListing">
+        {{#if isInRole 'admin'}}
+    <div class="container">
+        <div class="center">
+            <p class="flow-text">소식을 추가하세요</p>
+        </div>
+          {{#autoForm collection="SharonNews2"
+      id="insertSharonForm"
+      type="method"
+      meteormethod="submitSharonListing"
+      omitFields="createdAt" autosave="false"}}
+      
+        <div class="border">
+        {{> afQuickField name='title'}}
+    </div>
+     <div class="border">
+        {{> afFieldInput id="textarea1" class="materialize-textarea" name='note2'}}
+    </div>
+     
+        <div class="center" style="margin-top:1em;">
+            <button type="submit" class="btn blue white-text">제출</button>
+        </div>
+      {{/autoForm}}
+    </div>
+    {{else}}
+    {{>noAuth}}
+    {{/if}}
+</template>

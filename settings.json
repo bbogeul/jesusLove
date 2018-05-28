@@ -1,0 +1,9 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://illumeweb:Joelee0310@aws-us-east-1-portal.6.dblayer.com:20173/regina?ssl=true"
+    }
+  },
+  "public": {},
+  "private": {}
+}

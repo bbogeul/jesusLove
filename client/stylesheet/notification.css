@@ -1,0 +1,6 @@
+.border {
+    border-style: solid  ;
+    padding: 1em;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.79);
+}

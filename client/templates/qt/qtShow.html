@@ -1,0 +1,50 @@
+<template name="qtShow">
+    <div class="parallax-container " style="height:250px;background: rgba(0, 0, 0, 0.42);">
+        <div class="parallax">
+          <img src="/img/qt.jpg" alt="">  
+        </div>
+        <h1 class="center myeong white-text hide-on-med-and-down" style="margin-top:1em;">  {{verse}} </h1>
+         <h4 class="center myeong white-text hide-on-large-only" style="margin-top:1em;"> {{verse}} </h4>
+        <p class=" myeong white-text center">{{dateInput}}</p>
+    </div>
+    <div class="row">
+    <div class="container">
+       
+      
+        {{#if isInRole 'admin'}}
+        <br>
+        <div class="center">
+            <a href="{{pathFor 'editQt.show'}}" class="btn red">수정</a>
+        </div>
+        <br>
+        {{else}}
+        {{/if}}
+ <div class="row">
+    <div id="explanation" class="col s12">
+       <div class="center patua flow-text ">
+           <br>
+          "  {{{explanation}}}"
+       </div>
+       
+    </div>
+    
+    <div class="col s12">
+    
+    </div>
+    <div id="words" class="col s12" style="width: 100%">
+       <br>
+    <br>
+        <div class="center">
+            {{{words}}}
+        </div>
+    </div>
+   
+  
+  </div>
+    </div>
+    </div>
+    <div class="center">
+      <button class="btn-flat" onclick="goBack()">뒤로</button>
+    </div>
+    <br>
+</template>

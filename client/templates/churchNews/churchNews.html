@@ -1,0 +1,13 @@
+<template name="churchNews">
+    <div class="container">
+      <h2 class="myeong grey-text text-darken-3">교회소식</h2>
+       {{#if currentUser}}
+       <a href="{{pathFor 'addNews'}}" class="btn-floating red darken-1 right" style="margin-top:.5em;"><i class="material-icons">add</i></a>
+       {{/if}}
+        <div class="row">
+            <div class="center">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+</template>

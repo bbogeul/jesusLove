@@ -1,0 +1,147 @@
+.section-v {
+    position: absolute;
+    width: 100%;
+    
+}
+.video-containers {
+    position: relative;
+}
+.section-v .play-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    
+}
+.section-v video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+
+}
+
+.vid1 {
+    width: 100%;
+    height: 100%;
+    max-width: 1034px;
+    max-height: 843px;
+    margin: 0 auto;
+}
+.vid1 .vid2 {
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 67.5%;
+    height: 0;
+}
+.vid2 iframe {
+    box-sizing: border-box;
+    background: url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat;
+    background-size: contain;
+    padding: 11.9% 15.5% 14.8%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper.demo3 {
+  max-width: 100;
+}
+
+/* ============================================================
+  DEMO 3 - BACKGROUND VIDEO
+============================================================ */
+#cmn-video-demo3__container {
+  position: relative;
+  margin: 0 0 0px 0;
+ 
+  background-color: #282828;
+  overflow: hidden;
+}
+
+
+
+#cmn-video-demo3__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 120%;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+.overlay{
+    position: absolute;
+ 
+  z-index: 12;
+  width: 100%;
+   
+    min-height:760px;
+ 
+    background-color: rgba(0, 0, 0, 0.49); /*dim the background*/
+}
+
+#cmn-video-demo3__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 22;
+  padding: 30px 10px;
+  text-align: center;
+}
+#cmn-video-demo3__content h2,
+#cmn-video-demo3__content p,
+#cmn-video-demo3__content a {
+  color: #fff;
+   
+}
+#cmn-video-demo3__content h2 {
+
+  font-size: 30px;
+}
+#cmn-video-demo3__content p {
+  margin-bottom: 40px;
+}
+
+
+@media all and (min-width: 600px) {
+  #cmn-video-demo3__container {
+    height: 740px;
+  }
+ 
+  #cmn-video-demo3__content {
+    padding: 160px 20px;
+  }
+  #cmn-video-demo3__content h2 {
+    font-size: 42px;
+  }
+  #cmn-video-demo3__content p,
+  #cmn-video-demo3__content a {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 1024px) {
+  #cmn-video-demo3__container {
+    height: 600px;
+  }
+
+  #cmn-video-demo3__video {
+    width: 100%;
+  }
+
+  #cmn-video-demo3__content {
+    padding: 200px 20px;
+  }
+  #cmn-video-demo3__content h2 {
+    font-size: 54px;
+  }
+  #cmn-video-demo3__content p,
+  #cmn-video-demo3__content a {
+    font-size: 24px;
+  }
+}

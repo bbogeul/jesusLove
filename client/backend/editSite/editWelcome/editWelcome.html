@@ -1,0 +1,47 @@
+<template name="editWelcome">
+    <h2 class="blue-text text-lighten-1 myeong bold">환영합니다 페이지 수정</h2>
+    <div class="divider"></div>
+        {{#autoForm collection="AboutChurch"
+      id="insertWelcomeForm"
+      type="method"
+      meteormethod="submitWelcome"
+      omitFields="createdAt" autosave="false"}}
+   
+        <div class="border">
+        {{> afQuickField name='introduction'}}
+    </div>
+        <div class="center" style="margin-top:1em;">
+            <button type="submit" class="btn blue white-text">제출</button>
+        </div>
+      {{/autoForm}}
+      <div class="divider" style="margin-top:1em;"></div>
+      <section id="listOfWelcome">
+         <ul class="collection">
+   
+          {{#each AboutList}}
+                 <div class=" " style="padding:1em;">
+             <a href="{{pathFor 'editText.show'}}" class="btn red"><i class="fa fa-edit"></i></a>
+         </div>
+          <li class="collection-item"><p class="truncate">{{{introduction}}}</p></li>
+          {{/each}}
+          </ul>
+      </section>
+</template>
+
+<template name="editText">
+   <p class="flow-text">제출날짜: <b>{{dateFormat}}</b></p>
+ 
+        {{#autoForm  collection="AboutChurch" id="updateWelcomeForm" type="update" doc=this}}
+           <div class="border">
+        {{> afQuickField name='introduction'}}
+    </div>
+         <div class="center" style="margin-top:1em;">
+            <button type="submit" class="btn blue white-text">수정하기</button>
+        </div>
+     <div class="center" style="margin-top:0.5em;">
+            <button type="submit" class="btn red white-text">돌아가기</button>
+        </div>
+        {{/autoForm}}
+    
+</template>
+ 

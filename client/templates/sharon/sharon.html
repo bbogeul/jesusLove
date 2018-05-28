@@ -1,0 +1,78 @@
+<template name="sharon">
+       <h1 class="patua center hide-on-med-and-up">Sharon Choir<br> Worship and Praise <br>Him.</h1>
+    <section class="hide-on-small-only" style="padding:1em;background: rgba(255, 249, 234, 0.38);">
+     <h1 class="patua center hide-on-med-and-down">Sharon Choir<br> Worship and Praise <br>Him.</h1>
+            <h2 class="patua center hide-on-small-only hide-on-large-only">Sharon Choir<br> Worship and Praise <br>Him.</h2>
+           <h2 class="patua center hide-on-med-and-up">Sharon Choir <br> Worship and Praise <br>Him.</h2>
+       
+           <br>
+</section>
+
+
+    <div class="container"> 
+    
+    <div class="divider"></div>
+    {{#if isInRole 'admin'}}
+<div class="row">
+    <div class="center wow fadeInUp">
+        <a href="{{pathFor 'sharonAdd'}}" style="margin-top:1em;" class="btn-floating red  "><i class="material-icons">add</i></a>       <br>
+        <span>새로운 <b class="red-text">악보</b> 추가하세요</span>
+ 
+    </div>
+</div>
+    {{else}}
+    {{/if}}
+    <div class="row"> 
+    
+ {{>sharonMusic}}
+
+    </div>
+  
+    </div>
+</template>
+
+
+<template name="sharonMusic">
+    <div class="col l8 offset-l2 m12 s12">
+    
+    <div class="center">
+        <h4 class="myeong grey-text text-darken-2">악보 모집</h4>
+    </div>
+    <div class="center">
+        <p>악보 갯수: {{SharonNewsCount}}</p>
+    </div>
+     <ul class="collection with-header">
+       {{#each SharonNews}}
+       <li class="collection-item"><a class="bold" href="{{pathFor 'sharon.show'}}">{{title}}</a> <span class="right">{{dateInput}}</span> {{#if isInRole 'admin'}}<span class="red-text bold removeChart">REMOVE</span>{{/if}}</li>
+       {{else}}
+       <div class="center">
+           -끝-
+       </div>
+       {{/each}}
+      </ul>
+    <ul class="pagination center">
+         <li class="waves-effect previous"><a href="#!" class=""><i class="material-icons">chevron_left</i></a></li>
+          <li class="waves-effect next"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+ </div>
+</template>
+<template name="sharonListNews">
+    <div class="col l8 offset-l2 m12 s12">
+    <div class="center">
+        <h4 class="myeong grey-text text-darken-2">찬양대 소식</h4>
+    </div>
+     <ul class="collection with-header">
+       {{#each SharonNews2}}
+       <li class="collection-item"><a class="bold" href="{{pathFor 'sharonNews.show'}}">{{title}}</a> <span class="right">{{createdAt}}</span> {{#if isInRole 'admin'}}<span class="red-text bold removeChart2">REMOVE</span>{{/if}}</li>
+       {{else}}
+       <div class="center">
+          -끝-
+       </div>
+       {{/each}}
+      </ul>
+      <ul class="pagination center">
+          <li class="waves-effect previous2"><a href="#!"><i class="material-icons">remove</i></a></li>
+          <li class="waves-effect next2"><a href="#!"><i class="material-icons">add</i></a></li>
+    </ul>
+ </div> 
+</template>

@@ -1,0 +1,36 @@
+<template name="sharonNewsList">
+    <div class="parallax-container" style="height:250px;background: rgba(255, 249, 234, 0.38);">
+       <div class="parallax"></div>
+       <div class="container">
+           <h2 class="patua center" style="margin-top:1em;">Sharon Choir<br> News and Announcements </h2>
+           <br>
+       </div> 
+   </div>
+  <div class="parallax-container" style="height:320px;background:rgba(42, 42, 42, 0.24)">
+      <div class="parallax"><img src="/img/churchPics/sharon.jpeg">
+     
+      </div>
+
+      <br>
+    
+    </div>
+
+    <div class="container"> 
+    
+    <div class="divider"></div>
+    {{#if isInRole 'admin'}}
+<div class="row">
+    <div class="center wow fadeInUp">
+              <a href="{{pathFor 'sharonListing'}}" style="margin-top:1em;" class="btn-floating blue  "><i class="material-icons">add</i></a><br>
+        <span><b class="blue-text">소식</b> 추가하세요</span>
+ 
+    </div>
+</div>
+    {{else}}
+    {{/if}}
+    <div class="row"> 
+
+  {{> sharonListNews}}
+    </div>
+    </div>
+</template>

@@ -1,0 +1,30 @@
+<template name="dashboard">
+ <div class="">
+     <h3 class="grey-text text-darken-3 myeong">관리자 페이지로 오신 것을 환영합니다</h3>
+     <div class="divider"></div>
+     <div class="">
+      <p class="myeong"><b>관리자패널 사용법</b></p>
+      <ol>
+          <li><a href="{{pathFor 'editIntro'}}">사이트 내용 수정</a>
+          <ul>
+              <li>a. 사이트 내용 수정 페이지는 사이트의 Contents (내용)들을 쉽게 수정할 수 있는 페이지입니다.</li>
+              <li>b. 사이트 내용 수정 페이지는 "환영합니다" 및 "소개합니다" 섭섹션들 위주로 수정 가능합니다. (환영합니다, 새가족등록안내, 새가족교육, 소개합니다 페이지들입니다). </li>
+          </ul>
+          </li>
+      </ol>
+     </div>
+ </div>
+</template>
+<template name="noAuth">
+  <main> 
+   <div class="container"> 
+    <div class="center">
+       <br>
+        <h1 class="grey-text text-darken-3 myeong"><i class="red-text  text-lighten-1 fa fa-frown-o" aria-hidden="true"></i>
+<br>이 페이지를 보시거나 수정하실 권한이 없습니다. 홈페이지로 돌아가거나 로그인 해주세요.</h1>
+   <br>
+   <a href="{{pathFor 'loginPage'}}" class="btn red white-text">로그인</a>
+    </div>
+    </div>
+    </main>
+</template>

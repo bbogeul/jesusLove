@@ -1,0 +1,62 @@
+<template name="qt">
+    <h1 class="patua center hide-on-med-and-up">Quiet Time<br>  주님과 함께하는 조용한 시간</h1>
+<section class="hide-on-small-only" style="padding:1em;background: rgba(255, 249, 234, 0.38);">
+      <h1 class="patua center">Quiet Time<br>  주님과 함께하는 조용한 시간</h1>
+           <br>
+</section>
+    
+    
+    <section> 
+    <div class="divider"></div>
+    <div class="">
+    {{#if isInRole 'admin'}}
+    {{>qtAdd}}
+    {{else}}
+    {{/if}}
+   <div class="container">
+        <br>
+        {{#if qtWords}}
+         <ul class="pagination center">
+          <li class="waves-effect previous2"><a href="#!"><i class="material-icons">remove</i></a></li>
+          <li class="waves-effect next2"><a href="#!"><i class="material-icons">add</i></a></li>
+    </ul>
+       {{else}}
+       
+        {{/if}}
+         <div class="row">
+        <div class="center">
+            <p>현재 QT 갯수: {{qtWordsCount}}</p>
+        </div>
+        {{#each qtWords}}
+        <div class="col s12 m6 l4">
+             <div id="{{_id}}" class="card white darken-1">
+             {{#if isInRole 'admin'}}
+             <a href="#" class="material-icons right removeQt text-shad grey-text text-darken-2">close</a>
+             {{else}}
+             {{/if}}
+            <div class="card-content">
+               
+                <p class="card-title center"><b>{{verse}}</b></p>
+             <div class="center">
+                 {{dateInput}}
+             </div>
+            </div>
+           <div class="card-action center red">
+              <a href="{{pathFor 'qt.show'}}" class="white-text">자세히 보기</a>
+             
+            </div>
+          </div>
+        </div>
+        {{else}}
+        <div class="center">
+           <br>
+            현재 큐티가 없습니다. 나중에 다시 방문해주세요.
+        </div>
+        {{/each}}
+         
+    </div>
+     
+   </div>
+    </div>
+    </section>
+</template>

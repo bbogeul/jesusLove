@@ -1,0 +1,32 @@
+<template name="sharonView">
+    <div class="container">
+        <div class="center">
+            <h1 >{{title}}</h1>
+            <div class="divider"></div>
+               <br>
+                {{#if youtubeLink}}
+       <div class="container">
+            <iframe  src="https://www.youtube.com/embed/{{youtubeLink}}" frameborder="0" allowfullscreen></iframe>
+       </div>
+        {{else}}
+        <div class="center">
+            {{#if isInRole 'admin'}}
+            비디오가 없습니다
+            {{else}}
+            {{/if}}
+        </div>
+        {{/if}}
+            <p>찬양할 날짜: {{dateInput}}</p>
+            {{#if note}}
+            <p class="flow-text">주의사항: <br>{{{note}}}</p>
+            {{else}}
+            {{/if}}
+            <br>
+            {{#if linkForScript}}
+            <a target="_blank" href="{{linkForScript}}"><p class="flow-text">악보링크</p></a>
+            {{else}}
+            {{/if}}
+        </div>
+    
+    </div>
+</template>

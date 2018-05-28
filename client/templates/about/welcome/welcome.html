@@ -1,0 +1,44 @@
+<template name="welcome">
+        <div class="parallax-container" style="height:180px;background:rgba(42, 42, 42, 0.64)">
+      <div class="parallax"><img src="/img/churchPics/31.jpg">
+     
+      </div>
+        <div class="container" style="margin-top:3.5em;">
+          <h1 class="white-text myeong text-shad">환영합니다! <span class="grey-text text-lighten-2 hide-on-med-and-down" style="font-size:1.4rem">주사랑교회에 잘 오셨습니다.</span></h1>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col m5 l3 hide-on-small-only">
+                <ul class="collection with-header">
+        <li class="collection-header blue"><h5 class="white-text jeju">환영합니다</h5></li>
+        <li class="collection-item"><a href="/new-family" class="grey-text text-darken-3">새가족안내</a> </li>
+ 
+         
+      </ul>
+            </div>
+            <div class="col m7 l9">
+                <h4 class="blue-grey-text myeong">참 잘오셨습니다!</h4>
+                {{#if isInRole 'admin'}}
+                <a href="/dashboard/editSite/welcome" class="btn red lighten-2">수정하기 <i class="fa fa-edit right"></i></a>
+                {{else}}
+                {{/if}}
+                <div class="row" style="margin-top:-1.5em;">
+                    <div class="cols s12 m12 l12" style="padding:1em;">
+                       <div class="center">
+                           <img class="circle" src="/img/parkminjae.jpg" width="150px" alt="박민재 담임목사"><br>
+                           <span class="bold myeong grey-text text-darken-3">박민재 담임목사</span>
+                       </div>
+                    <div class="container">
+                             {{#each AboutList}}
+        
+                       <p class="grey-text text-darken-2">{{{introduction}}}</p>
+                        {{/each}}
+                    </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

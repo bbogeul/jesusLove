@@ -1,0 +1,59 @@
+<template name="sharonAdd">
+    {{#if isInRole 'admin'}}
+    <div class="container">
+        <div class="center">
+            <p class="flow-text">악보를 추가하세요</p>
+        </div>
+          {{#autoForm collection="SharonNews"
+      id="insertSharonForm"
+      type="method"
+      meteormethod="submitSharon"
+      omitFields="createdAt" autosave="false"}}
+      
+        <div class="border">
+        {{> afQuickField name='title'}}
+    </div>
+     <div class="border">
+        {{> afQuickField name='note'}}
+    </div>
+     <div class="border">
+        {{> afQuickField name='linkForScript'}}
+    </div>
+     <div class="border">
+       <div class="center">
+           *유투브 특성상 비디오 URL를 공유하고 싶으시면 https://www.youtube.com/watch?v=(ID)에 (ID) 부분만 복사하시면 됩니다.
+       </div>
+        {{> afQuickField name='youtubeLink'}}
+    </div>
+        <div class="border">
+        {{> afQuickField name='dateInput'}}
+    </div>
+        <div class="center" style="margin-top:1em;">
+            <button type="submit" class="btn blue white-text">제출</button>
+        </div>
+      {{/autoForm}}
+    </div>
+ 
+  
+    <div class="container">
+           <div class="row"> 
+ <div class="col l6 m12 s12">
+     <ul class="collection with-header">
+       {{#each SharonNews}}
+       <li class="collection-item"><a href="">{{title}}</a> <span class="right">{{dateInput}}</span> <span class="red-text bold removeChart">REMOVE</span> </li>
+       {{else}}
+       <div class="center">
+           악보를 추가해 주세요
+       </div>
+       {{/each}}
+      </ul>
+ </div>
+    </div>
+    </div>
+        {{else}}
+    {{>noAuth}}
+      {{/if}}
+</template>
+<template name="sharonEdit">
+    
+</template>

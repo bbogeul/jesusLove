@@ -1,0 +1,46 @@
+<template name="Users">
+	{{#if isInRole 'admin'}}
+	<div class="container">
+		<h1 class="grey-text text-darken-2">Users</h1>
+		<br>
+		
+		 <br>
+		You will not appear below. 
+		 <table class="table ">
+		 <tr class="headerTable">
+		 	<th>ID</th>
+		 	<th>First Name</th>
+		 	<th>Email</th>
+		 	 
+		 	<th>Phone #</th>
+		 	<th>Created At</th>
+		 	<th>Status</th>
+		 	<th>*</th>
+		  </tr>
+		{{#each users}}
+ <tbody class="table table-striped">
+ 	<td class="user_id blue-text pt">{{_id}}</td>
+ 	<td>{{profile.firstName}} {{profile.lastName}}</td>
+ 	<td>{{userEmail}}</td>
+ 	 
+ 	<td>{{profile.phoneNumber}}</td>
+ 	<td>{{dateFormat}}</td>
+ 	<td> 
+ 	{{#if isAdmin}}
+ 	 <button class="toggle-admin">Remove Privilege</button>
+ 	{{else}}<div class="user_edit">
+ 
+ 	<button  class="toggle-admin">Add Privilege</button>
+ 	</div>
+ 	{{/if}}
+ 	</td>
+ 	<td><span class="user_idR red-text pt bold">REMOVE USER</span></td>
+
+ </tbody>
+		{{/each}}
+		 </table>
+	</div>
+	{{else}}
+	{{>noAuth}}
+	{{/if}}
+</template>

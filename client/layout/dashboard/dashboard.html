@@ -1,0 +1,40 @@
+<template name="dashboardLayout">
+
+ {{#if isInRole 'admin'}}
+               <section class="grey darken-2" style="padding:.1em">
+                         <div class="container"> 
+                          <span class="white-text   ">환영합니다 <b>{{lastName}}{{firstName}}</b>님</span>
+                          </div>
+               </section>
+          
+    {{>headerForDashboard}}
+    <main> 
+    <section style="margin-top:1em;"> 
+    <div class="container">
+        <div class="row">
+        <div class="col s12 m12 l3">
+              <h5 class="grey-text text-darken-2 center"><span class="red-text text-lighten-1"><i class="fa fa-dashboard"></i></span><br> 관리목록</h5>
+              <div class="divider"></div>
+             <ul class="collection center">
+      <li class="collection-item"><a href="{{pathFor 'editIntro'}}" >사이트 내용 수정</a></li>
+      <li class="collection-item"><a href=""  >기도제목 목록</a></li>
+      <li class="collection-item"><a href="">주보정보 수정</a></li>
+      <li class="collection-item"><a href="">교회소식 추가/수정</a></li>
+       <li class="collection-item"><a href="">설교말씀 추가/수정</a></li>
+    </ul>
+            
+           
+             
+        </div>
+        <div class="col s12 m12 l9">
+           {{>yield}}
+            </div>
+        </div>
+    </div>
+    </section>
+    </main>
+    {{else}}
+    {{>noAuth}}
+    {{/if}}
+   
+</template>

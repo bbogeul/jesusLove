@@ -1,0 +1,196 @@
+<template name="header">
+ <div class="navbar-fixed">
+
+
+  <nav class="white">
+    <div class="nav-wrapper">
+     <div class="container">
+      <a href="/" class="brand-logo hide-on-small-only"><img src="/img/logo.png" alt="주사랑교회" height="25"></a>
+        
+         <a href="/" style="margin-left:-10px;" class="brand-logo hide-on-med-and-up show-on-small-only"><img src="/img/mobile-logo.png" alt="주사랑교회" height="35"></a>  
+            <a href="#" data-activates="mobile-demo" class="grey-text text-darken-3 button-collapse"><i class="material-icons">menu</i></a>
+             <a href="/sermon-sunday/#locationOfChurch" style="margin-right:1em;" class="red-text text-lighten-1 right hide-on-large-only"><i class="material-icons medium">location_on</i></a>
+
+      <ul id="nav-mobile" class="goth right hide-on-med-and-down">
+        <li><a href="{{pathFor 'intro'}}" class="grey-text   text-darken-2 bold">환영합니다</a></li>
+       
+        <li><a href="{{pathFor 'qt'}}"  class="grey-text   text-darken-2 bold">QT 말씀</a></li>
+         <li><a href="{{pathFor 'youthIntro'}}" class="grey-text  text-darken-2 bold">교육과 훈련</a></li>
+          <li><a href="{{pathFor 'missionary'}}" class="grey-text text-darken-2 bold">선교와 사역</a></li>
+           <li><a href="{{pathFor 'sharon'}}" class="grey-text text-darken-2 bold">샤론 찬양대</a></li>
+            {{#if currentUser}}
+            {{lastName}}{{firstName}} 님{{> loginList}}
+            {{/if}}
+            <li><a href="#" data-activates="mobile-demo" class="grey-text text-darken-2 bold menuOpen"><i class="material-icons">menu</i></a></li>
+      </ul>
+ 
+      <!-- temporary ADDON  -->
+     
+        </div>
+        
+        <!--Side Nav-->
+         <ul id="mobile-demo" class="side-nav">
+  
+
+    <li style="height:70px"><a href="#!"><img src="/img/logo.png" width="90%" class="center" style="margin-top:1em;" alt="주사랑교회"></a></li>
+    <section>
+     {{#if currentUser}}
+        <div class="center">
+          <li class="blue"><b>  {{lastName}}{{firstName}}님</b> 환영합니다</li>
+          <li><a href="" class="btn logout white-text red">로그아웃</a></li>
+         
+        </div>
+        {{/if}}
+    </section>
+   
+    <li><a href="{{pathFor 'intro'}}" class="grey-text dropdown-button text-darken-2 bold">환영합니다</a></li>
+       
+        <li><a href="{{pathFor 'qt'}}"  class="grey-text dropdown-button text-darken-2 bold">QT 말씀</a></li>
+         <li><a href="{{pathFor 'youthIntro'}}"  class="grey-text dropdown-button text-darken-2 bold">교육과 훈련</a></li>
+          <li><a href="{{pathFor 'missionary'}}" class="grey-text text-darken-2 bold">선교와 사역</a></li>
+           <li><a href="{{pathFor 'sharon'}}" class="grey-text text-darken-2 bold">샤론 찬양대</a></li>
+           <li><a href="/sermon-sunday/#locationOfChurch" class="grey-text text-darken-2 bold">찾아오시는 길</a></li>
+            <li class="divider"></li>
+             <li><a class="subheader blue-text "><b>교육과 훈련</b></a></li>
+ 
+    <li><a href="{{pathFor 'preschool'}}">유초등부</a></li>
+     <li><a href="{{pathFor 'preschool'}}">중고등부</a></li>
+<li class="divider"></li>
+             <li><a class="subheader blue-text"><b>예배</b></a></li>
+              <li><a href="{{pathFor 'sermon1'}}">주일예배</a></li>
+             <li><a href="http://cafe.daum.net/lovejsr/XkHl">설교말씀</a></li>
+             <li><a href="http://cafe.daum.net/lovejsr/Xk8K">엘로힘 청년부</a></li>
+    
+     
+  </ul>
+    
+    </div>
+  </nav>  
+ </div>
+</template>
+<template name="footer">
+   <section class="light-blue darken-4" style="margin-bottom:-1.4em;">
+       <div class="">
+            <div  class="container">
+         <div class="row">
+             <div class="col s12 m6 l6 hide-on-small-only">
+               <div class="rightTags bold"> 
+                <span class="white-text" style="font-size:15px">목양실: (031) 970-7511,2</span>
+                <span  class="white-text" style="font-size:15px;margin-left:1em;">사택: (031) 970-9943</span>
+                </div>
+                
+             </div>
+             <div class="right">
+                    <a href="https://urlgeni.us/facebook/9A12"><i style="margin-top:.2em;margin-right: 0.5em;" class="fab fa-facebook-square fa-3x white-text"></i></a>  <a href="https://urlgeni.us/instagram/Z18T"><i style="margin-top:.2em;" class="fab fa-instagram fa-3x white-text"></i></a> 
+                </div>
+         </div>
+     </div>
+       </div>
+   </section>
+   
+   
+   
+    <footer class="page-footer grey darken-4">
+        <div class="container">
+            <div class="row">
+             
+                <div class="col s12 m12 l3">
+                         
+                          <h4 class="bold white-text">예배안내</h4>
+                          <div class="divider"></div>
+                           <ul class="">
+                    <li class="white-text goth">주일예배: <b>오전 11:00</b></li>
+                      <li class="white-text goth">수요예배: <b>오후 7:30</b></li>
+                       <li class="white-text goth">금요집회: <b>오후 8:00</b></li>
+                       <li class="white-text goth">새벽예배: <b>오전 5:30</b></li>
+                        <li class="white-text goth">청년부예배: <b>오후 1:00</b></li>
+                    </ul>
+                   
+                      <ul class="">
+                         <li class="white-text goth">담임목사: <b>박민재</b></li>
+                        <li class="white-text goth">협동목사: <b>김동환</b></li>
+                    <li class="white-text goth">지휘: <b>이동섭</b></li>
+               
+                       <li class="white-text goth">반주: <b>오윤혜 최수경</b></li>
+                         <li class="white-text goth">파송선교사: <b>노동현 (김미정)</b></li>
+                               <li class="white-text goth">인도네시아: <b>김철용 (이강인)</b></li>
+                                     <li class="white-text goth">알바니아: <b>김용기 (김미숙)</b></li>
+                                           <li class="white-text goth">조지아: <b>송기동 (김세라)</b></li>
+                                                 <li class="white-text goth">기니: <b>손요한 (고광임)</b></li>
+                    </ul>
+                     
+                </div>
+                                <div class="col s12 m12 l9">
+                <div class="row">
+                     <div class="col s12 m12 l12">
+                <div class="row">
+                     <div class="col s12 m12 l4">
+                      <h4 class="patua upper white-text">About</h4>
+                          <div class="divider"></div>
+                     <ul class="footerNav center">
+                         <li><a href="{{pathFor 'intro'}}">주사랑교회 대해서</a></li>
+                          <li><a href="{{pathFor 'newFamily'}}">새가족 안내</a></li>
+                           <li><a href="http://cafe.daum.net/lovejsr/Xk8K">엘로힘 청년부</a></li>
+                         
+                         
+                     </ul>
+                </div>
+                 <div class="col s12 m12 l4">
+                  <h4 class="patua upper white-text">Worship</h4>
+                          <div class="divider"></div>
+                            <ul class="footerNav center">
+                            <li><a href="{{pathFor 'sermon1'}}">주일예배</a></li>
+                         <li><a href="http://cafe.daum.net/lovejsr/XkHl">설교</a></li>
+                          <li><a href="{{pathFor 'sharon'}}">샤론 찬양대</a></li>
+                           <li><a href="{{pathFor 'qt'}}">QT</a></li>
+                            
+                         
+                     </ul>
+                </div>
+                 <div class="col s12 m12 l4">
+                  <h4 class="patua upper white-text">Evangelize</h4>
+                          <div class="divider"></div>
+                            <div class="divider"></div>
+                            <ul class="footerNav center">
+                         <li><a href="">F.A.I.T.H 전도</a></li>
+                    
+                            <li><a href="http://cafe.daum.net/lovejsr/XoZ6">Hallelujah FC</a></li>
+                          
+                            
+                         
+                     </ul>
+                </div>
+              
+                </div>
+                
+            </div>
+                </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="center">
+                   
+                </div>
+            </div>
+        </div>
+         <div class="footer-copyright black">
+            <div class="container bold" style="padding: 1em;">
+                <p class="left">©1996 - 2018 주사랑교회 대한예수교장로회 | {{#if currentUser}}<a class="logout">로그아웃</a>{{else}}<a href="{{pathFor 'loginPage'}}" class="" >로그인</a>{{/if}}</p> 
+           <p class="right">경기도 고양시 덕양구 행신동 989 샘터마을 A상가 2층</p>
+            </div>
+          </div>
+    </footer>
+</template>
+<template name="loginList">
+      <li><a href=""  class="bold blue-text dropdown-button" data-activates="loginDrop">{{lastName}}{{firstName}} 님 <i class="material-icons right">arrow_drop_down</i></a></li>
+             <ul id='loginDrop' class='dropdown-content'>
+    <li class="red"><a class="logout white-text"><b>로그아웃</b></a></li>
+ 
+    <li class="divider" tabindex="-1"></li>
+   {{#if isInRole 'admin'}}
+    <li><a href="{{pathFor 'dashboard'}}">관리자패널</a></li>
+   {{/if}}
+   
+  </ul>
+</template>
