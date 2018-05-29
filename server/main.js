@@ -1,29 +1,23 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
-  Meteor.methods({
-    /**
-     * This will create the initial admin user.  This will only work if one does not presently exist, if one does exist it will throw an error.
-     * @param email
-     * @param password
-     */
-    createInitialAdminUser: function (email, password) {
-        if (Roles.getUsersInRole('admin', null, {reactive: false, limit: 1}).count() != 0) {
-            throw new Meteor.Error("An existing admin user is already present");
-        }
-        var userId = Accounts.createUser({email: email, password: password});
-        Roles.addUsersToRoles(userId, ['admin']);
-    },
-    /**
-     * 
-     * @returns {boolean} true if there is at least one admin user
-     */
-    hasAdminUser: function() {
-        var c = Roles.getUsersInRole('admin', null, {reactive: false, limit: 1}).count();
-        return c != 0;
+ process.env.MAIL_URL='smptp://postmaster%sandboxe579574d0e564bf0a26527dbba7e0da5.mailgun.org:5c296f91e0681050387548aff2b4d178-b6183ad4-635ce8a2@smptp.mailgun.org:587';
+    
+});
+
+//email
+Meteor.methods({
+    'sendEmail': function(to,subj,text){
+        this.unblock();
+        
+        Email.send({
+            to:to,
+            from:'no-reply@yourdomain.com',
+            subject: subj,
+            text: text
+        })
     }
-});
-});
+})
 
 
 if (Meteor.isServer) {
