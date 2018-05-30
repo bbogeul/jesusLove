@@ -1,4 +1,5 @@
-Template.contactEmail.events({
+if (Meteor.isClient) {
+    Template.contactEmail.events({
     'submit #email-form': function(e,t){
     e.preventDefault();
     var toAddr=t.find('#inputEmail').value;
@@ -8,3 +9,4 @@ Template.contactEmail.events({
  
 }
 })
+}
