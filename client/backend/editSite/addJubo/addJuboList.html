@@ -1,4 +1,5 @@
 <template name="addJuboList">
+{{#if Template.subscriptionsReady}}
         <h2 class="myeong bold">주보내용 추가 및 수정</h2>
     <div class="divider"></div>
     
@@ -233,6 +234,9 @@
         </tbody>
       </table>
    </div>
+   {{else}}
+   {{>loader}}
+   {{/if}}
 </template>
 <template name="dateLine">
     <div class="center">

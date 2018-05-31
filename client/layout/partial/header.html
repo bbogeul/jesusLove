@@ -46,6 +46,15 @@
           {{#if isInRole 'admin'}}
             <li><a href="/dashboard" class="btn white-text">관리자패널</a></li>
           {{/if}}
+          {{#if isInRole 'normal'}}
+          <div class="center">
+             
+          </div>
+          {{else}}
+          <div class="center red-text">
+               아직 확인되지 않은 유저입니다.
+          </div>
+          {{/if}}
           <li><a href="" class="btn logout white-text red">로그아웃</a></li>
          
         </div>
