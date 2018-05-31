@@ -4,13 +4,13 @@
   
  {{>atForm}}
         {{#if currentUser}}
-   <div class="container" style="height: 450px;">
+   <div class="container" style="height: 350px;">
        <h1 class="center">정상적으로 로그인 되셨습니다.</h1>
        {{#if isInRole 'admin'}}
        <div class="center">
            <a href="{{pathFor 'dashboard'}}" class="btn">관리자 패녈로 가기</a>
        </div>
- 
+ <br>
        {{else}}
      
        {{/if}}
@@ -18,6 +18,12 @@
        <a href="{{pathFor 'home'}}">홈페이지로 돌아가기</a>
        </div>
    </div>
+       {{#if isInRole 'normal, admin'}}
+       {{else}}
+       <div class="center">
+           <p class="red-text"><b>{{lastName}}{{firstName}}님.</b> 아직 확인되지 않은 ID입니다. 관리자가 확인하신 후 사이트 기능 사용 가능합니다.</p>
+       </div>
+       {{/if}}
         {{else}}
      
 {{/if}}
