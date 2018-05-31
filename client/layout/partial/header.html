@@ -213,6 +213,9 @@
    {{#if isInRole 'admin'}}
     <li><a href="{{pathFor 'dashboard'}}">관리자패널</a></li>
    {{/if}}
-   
+   {{#if isInRole 'admin, normal'}}
+   <li><a href="{{pathFor 'prayerList'}}">기도제목</a></li>
+   {{else}}
+   {{/if}}
   </ul>
 </template>
