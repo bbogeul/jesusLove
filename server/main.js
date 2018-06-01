@@ -49,17 +49,25 @@ Meteor.publish('allUsers', function() {
  Meteor.publish('theQList', function(limitCount) {
     return qtWords.find({},{limit:6,limit:limitCount});
 });  
- Meteor.publish('thePList', function( ) {
-    return PrayerList.find({});
-});     
+    
   Meteor.publish('theSr1List', function() {
     return Sermon1.find({});
 }); 
-  Meteor.publish('thePLList', function() {
-    return PrayerList.find({});
-}); 
+   Meteor.publish("thePLList", function(limit){
+      return PrayerList.find({},{limit:limit});
+    });
     
-
+PrayerList.allow({
+  insert: function (userId, doc) {
+    return true;
+  },
+  update: function (userId, doc, fields, modifier) {
+    return true;
+  },
+  remove: function (userId, doc) {
+    return true;
+  }
+});
    
   Meteor.publish('theSr2List', function() {
     return Sermon2.find({});
@@ -149,7 +157,6 @@ Meteor.methods({
 Meteor.publish('rsvps', function () {
   return Rsvps.find();
 });
-
 
 
 

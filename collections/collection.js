@@ -483,6 +483,7 @@ Sermon2.allow({
     return true;
   }
 });
+
 ServiceMembers.allow({
   insert: function (userId, doc) {
     return true;
