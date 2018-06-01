@@ -142,7 +142,7 @@ Meteor.methods({
 	'submitPrayerList': function (rsvp) {
         PrayerList.insert(rsvp);
 		console.log('new Welcome:', rsvp);
-		 
+		
 	} 
 });
 
