@@ -146,6 +146,10 @@ Meteor.methods({
 	} 
 });
 
+Meteor.publish('rsvps', function () {
+  return Rsvps.find();
+});
+
 
 
 

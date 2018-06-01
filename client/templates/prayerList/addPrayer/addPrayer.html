@@ -33,12 +33,16 @@
         <br>
         
       {{/autoForm}}
+    
    </div>
    {{else}}
    <div class="center">
+    <section style="height: 400px;">
+      <h1 class="patua">죄송합니다.</h1>
      <p class="flow-text red-text">
        아직 확인되지 않은 아이디입니다. 확인되신 후 사용바랍니다.
      </p>
+     </section>
    </div>
    {{/if}}
    {{else}}
@@ -46,4 +50,9 @@
    <br>
    <br>
    {{/if}}
+</template>
+<template name="lastRsvp">
+  {{#each rsvps }}
+    {{name}} {{last}}
+  {{/each}}   
 </template>
