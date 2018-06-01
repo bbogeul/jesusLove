@@ -19,6 +19,10 @@
          <li><a href="{{pathFor 'youthIntro'}}" class="grey-text  text-darken-2 bold">교육과 훈련</a></li>
           <li><a href="{{pathFor 'missionary'}}" class="grey-text text-darken-2 bold">선교와 사역</a></li>
            <li><a href="{{pathFor 'sharon'}}" class="grey-text text-darken-2 bold">샤론 찬양대</a></li>
+          {{#if currentUser}}
+          {{else}}
+            <li><a href="{{pathFor 'loginPage'}}" class="grey-text text-darken-2 bold">로그인</a></li>
+           {{/if}}
             {{#if currentUser}}
             {{lastName}}{{firstName}} 님{{> loginList}}
             {{/if}}
@@ -59,7 +63,7 @@
          
         </div>
         {{else}}
-        <li><a href="{{pathFor 'loginPage'}}" class="btn">로그인</a></li>
+        <li><a href="{{pathFor 'loginPage'}}" class="btn blue">로그인</a></li>
         {{/if}}
     </section>
    

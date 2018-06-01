@@ -55,6 +55,9 @@ Meteor.publish('allUsers', function() {
   Meteor.publish('theSr1List', function() {
     return Sermon1.find({});
 }); 
+  Meteor.publish('thePLList', function() {
+    return PrayerList.find({});
+}); 
     
 
    
