@@ -32,24 +32,12 @@
             <button type="submit" class="btn blue white-text">제출</button>
         </div>
       {{/autoForm}}
+      <br>
+      <br>
+      <br>
     </div>
  
-  
-    <div class="container">
-           <div class="row"> 
- <div class="col l6 m12 s12">
-     <ul class="collection with-header">
-       {{#each SharonNews}}
-       <li class="collection-item"><a href="">{{title}}</a> <span class="right">{{dateInput}}</span> <span class="red-text bold removeChart">REMOVE</span> </li>
-       {{else}}
-       <div class="center">
-           악보를 추가해 주세요
-       </div>
-       {{/each}}
-      </ul>
- </div>
-    </div>
-    </div>
+   
         {{else}}
     {{>noAuth}}
       {{/if}}
