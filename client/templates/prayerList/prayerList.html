@@ -9,15 +9,15 @@
    {{#if isInRole 'admin, normal'}}
    <section style="padding:1em;">
    <div class="container center">
-       <a href="{{pathFor 'addPrayer'}}" class="btn">기도제목 추가하기</a>
+       <a href="{{pathFor 'addPrayer'}}" class="btn blue bold">기도제목 추가하기</a>
    </div>
    <div class="row">
      <div class="container">
       <div class="col s12 m12 l8 offset-l2">
           <div class="collection">
     {{#each PrayerList}}
-    <a class="collection-item">
-     <span>{{title}}</span>
+    <a href="" class="collection-item">
+     <span class="bold">{{title}}</span>
      <span class="right">{{createdAt}}</span>
     </a>
     {{/each}}

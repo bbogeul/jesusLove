@@ -51,9 +51,7 @@
             <li><a href="/dashboard" class="btn white-text">관리자패널</a></li>
           {{/if}}
           {{#if isInRole 'normal, admin'}}
-          <div class="center">
-             
-          </div>
+       <li><a href="{{pathFor 'prayerList'}}" class="btn  white-text blue">기도제목</a></li>
           {{else}}
           <div class="center red-text">
                아직 확인되지 않은 유저입니다.
