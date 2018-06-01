@@ -19,3 +19,10 @@ Template.sharonAdd.onCreated(function(){
       SharonNews.remove(this._id);
     }
   });
+
+  AutoForm.addHooks(['insertSharonForm'], {
+  onSuccess: function(operation, result, template) {
+    Bert.alert( '성공! 악보 제출하셨습니다.', 'success', 'growl-top-right', 'fa-check' );
+ 
+  }
+});
