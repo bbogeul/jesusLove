@@ -1,0 +1,49 @@
+<template name="addPrayer">
+    {{#if currentUser}}
+   {{#if isInRole 'normal, admin'}}
+     <section style="padding:1em;background: rgba(255, 249, 234, 0.38);">
+       <div class="center container">
+           <h1 class="patua">기도제목 추가하세요</h1>
+           <p class="flow-text">원하시는 기도제목을 올려보세요 </p>
+       </div>
+   </section>   
+   <div class="container">
+               {{#autoForm collection="PrayerList"
+      id="insertPrayerList"
+      type="method"
+      meteormethod="submitPrayerList"
+      omitFields="createdAt" autosave="false"}}
+      <br>
+      <div class="row">
+          <div class="col s12 m12 l8 offset-l2">
+              <div class="input-field">
+                    <label for="title">제목</label>
+                   {{> afFieldInput type="text" id="title" class="validate" name='title'}}
+              </div>`
+              <div class="input-field">
+                  <label for="words">내용</label>
+                   {{> afFieldInput name='words' id="words" type="textarea" class="materialize-textarea"}}
+              </div>
+          </div>
+      </div>
+      <br>
+       <div class="center" style="margin-top:1em;">
+            <button type="submit" class="btn blue white-text">제출</button>
+        </div>
+        <br>
+        
+      {{/autoForm}}
+   </div>
+   {{else}}
+   <div class="center">
+     <p class="flow-text red-text">
+       아직 확인되지 않은 아이디입니다. 확인되신 후 사용바랍니다.
+     </p>
+   </div>
+   {{/if}}
+   {{else}}
+   {{>noAuth}}
+   <br>
+   <br>
+   {{/if}}
+</template>
