@@ -17,15 +17,20 @@
           <div class="collection">
     {{#each PrayerList}}
     <a href="" class="collection-item">
-     <span class="bold">{{title}}</span>
-     <span class="right">{{createdAt}}</span>
+     <span class="bold ">{{title}}</span>
+     {{#if isInRole 'admin'}}
+     <span class="right removePrayer"><i class="material-icons red-text">close</i></span>
+     {{else}}
+     {{/if}}
     </a>
     {{/each}}
 
   </div>
+ 
   <div class="center">
     <button class="btn loadMorePrayer">더 보기 + </button>
   </div>
+ 
       </div>
      </div>
    </div>

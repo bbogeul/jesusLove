@@ -28,7 +28,7 @@ Template.sharonAdd.onCreated(function(){
 });
   AutoForm.addHooks(['updateSharonForm'], {
   onSuccess: function(operation, result, template) {
-    Bert.alert( '성공! 악보 수정하셨습니다.', 'success', 'growl-top-right', 'fa-check' );
+    Bert.alert( '성공! 악보 수하셨습니다.', 'success', 'growl-top-right', 'fa-check' );
  
   }
 });

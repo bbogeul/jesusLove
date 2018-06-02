@@ -341,7 +341,7 @@ PrayerList.attachSchema(new SimpleSchema({
  
 
 title: {
-    optional: true,
+    optional: false,
     type: String,
     label: "제목"
 }, 
@@ -355,7 +355,7 @@ words: {
     autoValue: function () {
       return new Date();
     }
-  } 
+  }  
   }));
 AboutChurch.allow({
   insert: function (userId, doc) {
