@@ -150,15 +150,7 @@ SharonNews.attachSchema(new SimpleSchema({
      note: {
     optional: true,
     type: String,
-    label: "주의사항",
-           autoform: {
-      afFieldInput: {
-         type: 'froala',
-          width: "100%",
-           theme: "dark"
-        // froala options goes here
-      }
-    },
+    label: "주의사항"
 }, 
     linkForScript: {
     optional: true,

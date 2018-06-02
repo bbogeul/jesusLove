@@ -10,22 +10,23 @@
       meteormethod="submitSharon"
       omitFields="createdAt" autosave="false"}}
       
-        <div class="border">
+        <div class="">
         {{> afQuickField name='title'}}
     </div>
-     <div class="border">
-        {{> afQuickField name='note'}}
+     <div class="input-fields">
+      <label for="">주의사항</label>
+        {{> afFieldInput name='note' type="textarea" class="materialize-textarea"}}
     </div>
-     <div class="border">
+     <div class="">
         {{> afQuickField name='linkForScript'}}
     </div>
-     <div class="border">
+     <div class="">
        <div class="center">
            *유투브 특성상 비디오 URL를 공유하고 싶으시면 https://www.youtube.com/watch?v=(ID)에 (ID) 부분만 복사하시면 됩니다.
        </div>
         {{> afQuickField name='youtubeLink'}}
     </div>
-        <div class="border">
+        <div class="">
         {{> afQuickField name='dateInput'}}
     </div>
         <div class="center" style="margin-top:1em;">
