@@ -33,6 +33,7 @@ Template.qt.events({
 
     "click .removeQt": function () {
       qtWords.remove(this._id);
+      Bert.alert( '삭제되었습니다', 'danger', 'growl-top-right', 'fa-check' );
     }
   });
 

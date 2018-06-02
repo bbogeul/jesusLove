@@ -23,6 +23,7 @@ Template.footer.events({
  
 	'click .logout': ()=> {
 		Meteor.logout();
+    Bert.alert( '로그아웃되었습니다', 'danger', 'growl-top-right', 'fa-check' );
 	}
 });
 
@@ -30,12 +31,14 @@ Template.loginList.events({
  
 	'click .logout': ()=> {
 		Meteor.logout();
+    Bert.alert( '로그아웃되었습니다', 'danger', 'growl-top-right', 'fa-check' );
 	}
 });
 Template.header.events({
  
 	'click .logout': ()=> {
 		Meteor.logout();
+    Bert.alert( '로그아웃되었습니다', 'danger', 'growl-top-right', 'fa-check' );
 	}
 });
  
