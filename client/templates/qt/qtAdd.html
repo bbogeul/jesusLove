@@ -13,25 +13,25 @@
        <div class="row">
           
            <div class="col s12 m6 l6">
-               <div class="">
+               <div class="input-field">
         {{> afQuickField name='verse'}}
     </div>
            </div>
         
            
            <div class="col s12 m6 l6">
-               <div class="">
+               <div class="input-field">
         {{> afQuickField name='explanation'}}
     </div>
            </div>
             <div class="col s12 m12 l12">
-               <div class="border">
-        {{> afQuickField name='words'}}
+               <div class="input-field">
+        {{> afQuickField name='words' type="textarea" class="materialize-textarea"}}
     </div>
            </div>
            <div class="col s12 m6 l6 offset-l3">
-               <div class="">
-        {{> afQuickField name='dateInput'}}
+               <div class="input-field">
+        {{> afFieldInput name='dateInput' class="datepicker"}}
     </div>
            </div>
        </div>

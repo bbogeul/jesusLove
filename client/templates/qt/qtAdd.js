@@ -10,3 +10,7 @@
  
   }
 });
+  Template.qtAdd.rendered = function() {
+    
+     $('.datepicker').datepicker();      
+}

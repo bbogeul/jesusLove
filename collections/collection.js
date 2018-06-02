@@ -210,15 +210,7 @@ qtWords.attachSchema(new SimpleSchema({
   words: {
     optional: true,
     type: String,
-    label: "본문해설",
-       autoform: {
-      afFieldInput: {
-         type: 'froala',
-          width: "100%",
-           theme: "dark"
-        // froala options goes here
-      }
-    }
+    label: "본문해설"
 },
     
 explanation: {

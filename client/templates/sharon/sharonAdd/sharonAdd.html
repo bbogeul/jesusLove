@@ -13,9 +13,9 @@
         <div class="">
         {{> afQuickField name='title'}}
     </div>
-     <div class="input-fields">
-      <label for="">주의사항</label>
-        {{> afFieldInput name='note' type="textarea" class="materialize-textarea"}}
+     <div class="input-field">
+      <label for="#note">주의사항</label>
+        {{> afFieldInput id="note" name='note' type="textarea" class="materialize-textarea"}}
     </div>
      <div class="">
         {{> afQuickField name='linkForScript'}}
@@ -43,6 +43,4 @@
     {{>noAuth}}
       {{/if}}
 </template>
-<template name="sharonEdit">
-    
-</template>
+ 

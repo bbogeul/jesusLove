@@ -1,7 +1,8 @@
  
 Template.qt.rendered = function() {
      new WOW().init({ mobile:    false}); 
-     $('.parallax').parallax();        
+     $('.parallax').parallax();  
+           
 }
 
 Template.qt.helpers ({
