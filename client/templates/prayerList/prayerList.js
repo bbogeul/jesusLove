@@ -25,3 +25,4 @@ Template.prayerList.events({
       Bert.alert( '삭제되었습니다', 'danger', 'growl-top-right', 'fa-check' );
     }
   });
+ 

@@ -50,10 +50,10 @@ raix:ui-dropped-event
 cfs:standard-packages
 cfs:gridfs
 cfs:s3
-kurounin:pagination
-kurounin:pagination-blaze
-tmeasday:presence
+logging
+check
 materialize:materialize
 email
 themeteorchef:bert
 percolate:paginated-subscription
+tmeasday:presence

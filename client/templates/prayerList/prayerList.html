@@ -21,15 +21,20 @@
      {{#if isInRole 'admin'}}
      <span class="right removePrayer"><i class="material-icons red-text">close</i></span>
      {{else}}
+      <span class="right removePrayer">{{createdAt}}</span>
      {{/if}}
     </a>
     {{/each}}
 
   </div>
- 
-  <div class="center">
+ {{#if displayButton}}
+<div class="center">
     <button class="btn loadMorePrayer">더 보기 + </button>
   </div>
+ {{else}}
+
+ {{/if}}
+  
  
       </div>
      </div>

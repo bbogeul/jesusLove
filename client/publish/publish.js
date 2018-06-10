@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
  Meteor.subscribe('theAList');
- 
+ Meteor.subscribe('userPresence');
 
     Meteor.subscribe('theAList');
  Session.setDefault("limit",6);
