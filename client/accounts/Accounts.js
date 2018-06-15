@@ -35,6 +35,13 @@ AccountsTemplates.configure({
     },
 });
 AccountsTemplates.addFields([
+  {
+    _id: 'lastName',
+    type: 'text',
+    displayName: '성',
+    required: true
+
+  },
 	{
 		_id: 'firstName',
 		type: 'text',
@@ -42,13 +49,7 @@ AccountsTemplates.addFields([
 		required: true
 
 	},
-	{
-		_id: 'lastName',
-		type: 'text',
-		displayName: '성',
-		required: true
-
-	},
+	
 	{
 		_id: 'phoneNumber',
 		type: 'text',
