@@ -1,12 +1,17 @@
 <template name="loginPage">
-  <div class="loginRow">
-   <div class="container">
+  <section style="background: #eaeaea;">
+     <br>
+      <div class="row">
+          <div class="col s10 m8 l6 offset-s1 offset-m2 offset-l3">
+              <div class="card-panel">
+                  <div class="loginRow">
+   <div class=" ">
   
- <div class="row">
-   <div class="col s12 m8 l6 offset-m2 offset-l3">
+ <div class=" ">
+   <div class=" ">
      {{>atForm}}
         {{#if currentUser}}
-   <div class="container" style="height: 350px;">
+   <div class=" " style="height: 350px;">
        <h1 class="center">정상적으로 로그인 되셨습니다.</h1>
        {{#if isInRole 'admin'}}
        <div class="center">
@@ -33,4 +38,8 @@
  </div>
     </div>
     </div>
+              </div>
+          </div>
+      </div>
+  </section>
 </template>
