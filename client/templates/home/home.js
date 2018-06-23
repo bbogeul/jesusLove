@@ -1,6 +1,6 @@
  
 Template.home.rendered = function() {
-       $('.slider').slider({height:720,interval: 6000});
+       $('.slider').slider({height:790,interval: 5400});
      $('.parallax').parallax();
  
  var $card = $('.card');
