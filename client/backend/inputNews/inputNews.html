@@ -5,8 +5,28 @@
         <div class="card-title">
             <h1>교회 소식 올리기</h1>
         </div>
-        
+        {{#autoForm collection="ChurchNews"
+        id="insertNewsForm"
+        type="method"
+        meteormethod="submitNews"
+        omitFields="createdAt" autosave="false"}}
+        <div class="form-group">
+          
+            {{> afQuickField id="newTitle" name='title' class="form-control"}}
+            <br>
+            <label for="news">소식 내용</label>
+            {{> afFieldInput id="news" name='news' type="textarea" class=""}}
+        </div>
+       <div class="text-center">
+        <button type="submit" class="btn btn-success">제출</button>
+       </div>
+        {{/autoForm}}
     </div>
+</div>
+<br>
+<div class="text-center">
+    <p class="nanum">소식들 보기</p>
+    <a href="" class="btn btn-primary">소식들</a>
 </div>
     </div>
 </template>

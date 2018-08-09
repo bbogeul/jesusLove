@@ -3,7 +3,7 @@
          <div class=" ">
   <div class="row">
            <div class="col-sm-12 col-md-12 col-lg-3"></div>
-       <div class="col-sm-12 col-md-12 col-lg-6 wow fadeInUp">
+       <div class="col-sm-12 col-md-12 col-lg-6">
        
         {{#if isReady}}
         {{#each prayersBack}}
@@ -11,14 +11,33 @@
         <a href="{{pathFor 'updatePrayer.show'}}" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex justify-content-between">
                     <h5 class="mb-1 "><b>{{title}}</b></h5>
-                    <small>{{createdAt}}</small>
+                    <small>{{createdAt}} <a class="fas fa-times-circle red-text" data-toggle="modal" data-target="#{{_id}}"></a> </small>
                 </div>
                 <p class="mb-1 text-truncate">{{words}}</p>
                 {{#if allowed}}<p><span class="badge badge-pill badge-success">수락</span></p>{{else}}<span class="badge badge-pill badge-danger">미확인</span>{{/if}}
         </a>
-       
+        <div class="modal" id="{{_id}}" tabindex="-1" role="dialog" aria-labelledby="{{_id}}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{title}}라는 기도제목을 삭제하겠습니까?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">취소하기</button>
+                  <button type="button" class="btn btn-danger deletePrayer" data-dismiss="modal">삭제</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         {{else}}
-        Nothing here
+        기도제목 없습니다.
         {{/each}}
         {{else}}
         {{>loading}}

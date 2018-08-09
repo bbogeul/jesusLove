@@ -33,3 +33,9 @@ Template.prayerListingBack.helpers ({
         return moment(this.createdAt).format('MM/DD/YYYY');
     }
 });
+
+Template.prayerListingBack.events ({
+    'click .deletePrayer': function () {
+        PrayerList.remove(this._id);
+    }
+});
