@@ -21,7 +21,9 @@
 <template name="dashboardLayout">
     {{#if isInRole 'admin'}}
      {{>header2}}
-    {{>yield}}
+    <div id="site-content">
+        {{>yield}}
+    </div>
     {{>footer}}
     {{else}}
     {{>noAuth}}
