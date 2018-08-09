@@ -1,0 +1,32 @@
+<template name="churchNewsListing">
+<div class="container">
+        <h1 class="text-center wow fadeInDown"><strong>Church News</strong></h1>
+        <hr>
+</div>
+<div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-3"></div>
+        <div class="col-sm-12 col-md-12 col-lg-6">    <div class="list-group wow zoomIn">
+          {{#if isReady}}
+          {{#each churchNews}}
+            <a href=" " class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex justify-content-between">
+                    <h5 class="mb-1"><b>{{title}}</b></h5>
+                    <small>{{createdAt}}</small>
+                </div>
+                <p class="mb-1 text-truncate">{{news}}</p>
+            </a>
+            {{/each}}
+          {{else}}
+        {{>loading}}
+          {{/if}}
+            
+        </div>
+        <br><br>
+         {{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="justify-content-center" onClick=clickEvent}}
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-3"></div>
+         <br><br>
+         
+</div>
+    
+</template>

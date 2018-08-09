@@ -1,28 +1,42 @@
 <template name="sharonListing">
-        {{#if isInRole 'admin'}}
     <div class="container">
-        <div class="center">
-            <p class="flow-text">소식을 추가하세요</p>
-        </div>
-          {{#autoForm collection="SharonNews2"
-      id="insertSharonForm"
-      type="method"
-      meteormethod="submitSharonListing"
-      omitFields="createdAt" autosave="false"}}
-      
-        <div class="border">
-        {{> afQuickField name='title'}}
-    </div>
-     <div class="border">
-        {{> afFieldInput id="textarea1" class="materialize-textarea" name='note2'}}
-    </div>
-     
-        <div class="center" style="margin-top:1em;">
-            <button type="submit" class="btn blue white-text">제출</button>
-        </div>
-      {{/autoForm}}
-    </div>
+       <h3 class="text-center">성가곡집
+</h3>
+      <hr class="wow fadeIn">
+       <br>
+        <div class="row">
+           {{#if isReady}}
+            {{#each document}}
+            <div class="col-sm-12 col-md-6 col-lg-6">
+               <div class="card">
+               {{#if youtubeLink}}
+  <img class="card-img-top" src="http://i.ytimg.com/vi/{{youtubeLink}}/maxresdefault.jpg" alt="Card image cap">
+  {{else}}
+  <img src="https://images.wallpaperscraft.com/image/night_clouds_buildings_124523_300x168.jpg" class="card-img-top" alt="">
+  {{/if}}
+  <div class="card-body">
+    <h5 class="card-title text-center">{{title}}</h5>
+    <span>{{dateInput}}</span>
+    <p class="card-text text-truncate">{{#if note}}{{note}}{{else}}주의사항 없습니다.{{/if}}</p>
+    <a href="{{pathFor 'sharon.show'}}" class="btn btn-primary">보기</a>
+    {{#if isInRole 'admin'}}
+    <a href="{{pathFor 'sharonView.show'}}" class="btn btn-success">수정하기</a>
     {{else}}
-    {{>noAuth}}
     {{/if}}
+  </div>
+</div> 
+               <br>
+            </div>
+        
+            {{/each}}
+            <br>
+        
+            {{else}}
+            {{>loading}}
+            {{/if}}
+        </div>
+          <div class="row centerPagination justify-content-center">
+                {{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="justify-content-center" onClick=clickEvent}}
+          </div>
+    </div>
 </template>

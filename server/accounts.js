@@ -1,12 +1,12 @@
- var postSignUp = function(userId, info) {
+var postSignUp = function(userId, info) {
  
-  Roles.addUsersToRoles(userId, ['waiting', info.profile.profession]);
-}
- 
-
-AccountsTemplates.configure({
-    // Behavior
-    postSignUpHook: postSignUp
- 
-});
- 
+    Roles.addUsersToRoles(userId, ['waiting', info.profile.profession]);
+  }
+   
+  
+  AccountsTemplates.configure({
+      // Behavior
+      postSignUpHook: postSignUp
+   
+  });
+   

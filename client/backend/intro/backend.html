@@ -1,0 +1,25 @@
+<template name="backendIntro">
+    {{#if isInRole 'admin'}}
+    {{else}}
+    {{>noAuth}}
+    {{/if}}
+</template>
+<template name="noAuth">
+    <div class="container">
+        <div class=" " style="margin-top: 1em;">
+          <div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">접속 권한이 없는 페이지입니다.</h5>
+    <p class="card-text">이 페이지에 접속하시려면 로그인해주세요.</p>
+    <a href="{{pathFor 'loginPage'}}" class="btn btn-primary">로그인</a>
+  </div>
+  <div class="card-footer text-muted">
+   <a href="/">또는..홈페이지로 돌아가기</a>
+  </div>
+</div>
+        </div>
+    </div>
+</template>

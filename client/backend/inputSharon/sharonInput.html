@@ -1,0 +1,28 @@
+<template name="sharonInput">
+    <div class="container card" style="margin-top:7rem">
+        <div class="card-body">
+           <div class="card-title">
+               <h2 class="nanum">찬양 올리기</h2>
+           </div>
+            {{#autoForm collection="SharonNews"
+      id="insertSharonForm"
+      type="method"
+      meteormethod="submitSharon"
+      omitFields="createdAt" autosave="false"}}
+      {{> afQuickField name='title'}}
+      <br>
+      <label for="note">주의사항</label>
+       {{> afFieldInput id="note" name='note' type="textarea" class=""}}
+       <br>
+       <p class="text-center">*유투브 특성상 비디오 URL를 공유하고 싶으시면 https://www.youtube.com/watch?v=(ID)에 (ID) 부분만 복사하시면 됩니다.</p>
+       {{> afQuickField name='youtubeLink'}}
+       <br>
+       {{> afQuickField name='dateInput'}}
+       <br>
+        <div class="text-center" style="margin-top:1em;">
+            <button type="submit" class="btn-success btn">제출</button>
+        </div>
+      {{/autoForm}}
+        </div>
+    </div>
+</template>

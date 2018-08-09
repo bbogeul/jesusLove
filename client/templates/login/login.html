@@ -1,0 +1,18 @@
+<template name="loginPage">
+{{#if currentUser}}
+ <main role="main" class="container">
+      <div class="jumbotron">
+        <h1>로그인 성공! </h1>
+        <p class="lead">This is just a test</p>
+        <a class="btn btn-lg btn-primary" href="/" role="button">홈 가기</a>
+      </div>
+    </main>
+{{else}}
+   <div class="signInBody text-center">
+<div class="form-signin">
+     {{>atForm}}
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018 주사랑교회</p>
+</div>
+  </div>
+{{/if}}
+</template>

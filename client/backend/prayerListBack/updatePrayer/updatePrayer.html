@@ -1,0 +1,25 @@
+<template name="updatePrayer">
+     <div class="container" style="margin-top:7em">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title nanum">
+                   <h1 class="nanum">기도제목 수락하기</h1>
+                </div>
+                {{#autoForm collection="PrayerList"
+      id="updatePrayerForm"
+      type="update" doc=this}}
+      {{> afQuickField name='title'}}
+              <br>
+               <label for="note">기도제목</label>
+       {{> afFieldInput id="note" name='words' type="textarea" class=""}}
+       <br>
+              {{> afQuickField name='allowed'}}
+               <br>
+        <div class="text-center" style="margin-top:1em;">
+            <button type="submit" class="btn-success btn">수락하기</button>
+        </div>
+                {{/autoForm}}
+            </div>
+        </div>
+    </div>
+</template>

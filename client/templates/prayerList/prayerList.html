@@ -1,64 +1,7 @@
 <template name="prayerList">
-   <section style="padding:1em;background: rgba(255, 249, 234, 0.38);">
-       <div class="center container">
-           <h1 class="patua">기도제목</h1>
-           <p class="flow-text">원하시는 기도제목을 올려보세요 </p>
-       </div>
-   </section> 
-   {{#if currentUser}}
-   {{#if isInRole 'admin, normal'}}
-   <section style="padding:1em;">
-   <div class="container center">
-       <a href="{{pathFor 'addPrayer'}}" class="btn blue bold">기도제목 추가하기</a>
-   </div>
-   <div class="row">
-     <div class="container">
-      <div class="col s12 m12 l8 offset-l2">
-          <div class="collection">
-    {{#each PrayerList}}
-    <a href="" class="collection-item">
-     <span class="bold ">{{title}}</span>
-     {{#if isInRole 'admin'}}
-     <span class="right removePrayer"><i class="material-icons red-text">close</i></span>
-     {{else}}
-      <span class="right removePrayer">{{createdAt}}</span>
-     {{/if}}
-    </a>
-    {{/each}}
-
-  </div>
- {{#if displayButton}}
-<div class="center">
-    <button class="btn loadMorePrayer">더 보기 + </button>
-  </div>
- {{else}}
-
- {{/if}}
-  
- 
-      </div>
-     </div>
-   </div>
-   </section>
-   {{else}}
-   <section>
-       <div class="container">
-           <h3 class="patua center">아직 확인되지 않은 ID입니다. 확인 되신 후 이용바랍니다.</h3>
-       </div>
-   </section>
-   {{/if}}
-   {{else}}
- <div class="container">
-     <div class="center">
-         <h4 class="patua">  로그인하시길 바랍니다.</h4>
-         <p>기도제목을 올리기 위해서는 로그인하셔야 합니다.</p>
-         <br>
-         <br>
-         <a class="btn blue" href="{{pathFor 'loginPage'}}">로그인하기</a>
-         <br>
-         <br>
-         <br>
-     </div>
- </div>
-   {{/if}}
+    <div class="container" style="margin-top: 7em">
+       <h1 class="text-center wow nanum fadeInDown">기도제목</h1>
+       <hr class="wow fadeInUp"> 
+       {{>prayerListing}}
+    </div>
 </template>

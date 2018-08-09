@@ -1,50 +1,24 @@
- 
 Template.home.rendered = function() {
-       $('.slider').slider({height:790,interval: 5400});
-     $('.parallax').parallax();
- 
- var $card = $('.card');
-var lastCard = $(".card-list .card").length - 1;
-
-$('.next').click(function(){ 
-	var prependList = function() {
-		if( $('.card').hasClass('activeNow') ) {
-			var $slicedCard = $('.card').slice(lastCard).removeClass('transformThis activeNow');
-			$('ul').prepend($slicedCard);
-		}
-	}
-	$('li').last().removeClass('transformPrev').addClass('transformThis').prev().addClass('activeNow');
-	setTimeout(function(){prependList(); }, 150);
-});
-
-$('.prev').click(function() {
-	var appendToList = function() {
-		if( $('.card').hasClass('activeNow') ) {
-			var $slicedCard = $('.card').slice(0, 1).addClass('transformPrev');
-			$('.card-list').append($slicedCard);
-		}}
-	
-			$('li').removeClass('transformPrev').last().addClass('activeNow').prevAll().removeClass('activeNow');
-	setTimeout(function(){appendToList();}, 150);
-});
-       
-        
+    new WOW().init({ mobile:    false}); 
 }
 
 Template.home.helpers ({
-  qtWords: function() {
-    return qtWords.find({},{ sort: { createdAt: -1 }, limit:1 }).fetch();;
+    newestSharon: function() {
+    return SharonNews.find({},{ sort: { dateInput: -1 }, limit: 1}).fetch();;
     
-  }
-});
-
-Template.home.helpers({
-   dateInput: function() {
-	return moment(this.dateInput).format('MM월/DD일/YYYY');
+  },
+   newestQt: function() {
+    return qtWords.find({},{ sort: { dateInput: -1 }, limit: 1}).fetch();;
+    
+  },
+  newestPrayer: function() {
+      return PrayerList.find({allowed:true},{sort: {createdAt: -1},limit: 1}).fetch();;
+  },
+       dateInput: function() {
+	return moment(this.dateInput).format('MM/DD/YYYY');
 },
        createdAt: function() {
-	return moment(this.createdAt).format('MM월/DD일/YYYY');
-} 
+	return moment(this.createdAt).format('MM/DD/YYYY');
+}
 });
 
- 

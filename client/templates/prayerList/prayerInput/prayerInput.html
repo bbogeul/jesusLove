@@ -1,0 +1,26 @@
+<template name="prayerInput">
+    <div class="container" style="margin-top:7em">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title nanum">
+                   <h1 class="nanum">기도제목</h1>
+                </div>
+                {{#autoForm collection="PrayerList"
+      id="insertPrayerForm"
+      type="method"
+      meteormethod="submitPrayer"
+      omitFields="createdAt" autosave="false"}}
+      {{> afQuickField name='title'}}
+              <br>
+               <label for="note">기도제목</label>
+       {{> afFieldInput id="note" name='words' type="textarea" class=""}}
+       <br>
+               <br>
+        <div class="text-center" style="margin-top:1em;">
+            <button type="submit" class="btn-success btn">제출</button>
+        </div>
+                {{/autoForm}}
+            </div>
+        </div>
+    </div>
+</template>

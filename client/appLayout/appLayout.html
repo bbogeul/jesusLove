@@ -1,0 +1,32 @@
+<template name="appLayout">
+        <body id="page-top">
+    {{>header}}
+    <div id="site-content">
+    {{>yield}}
+            </div>
+    {{>footer}}
+    
+    </body>
+    
+</template>
+<template name="appLayout2">
+        <body id="page-top">
+    {{>header2}}
+    <div id="site-content">
+    {{>yield}}
+            </div>
+    {{>footer}}
+    </body>
+</template>
+<template name="dashboardLayout">
+    {{#if isInRole 'admin'}}
+     {{>header2}}
+    {{>yield}}
+    {{>footer}}
+    {{else}}
+    {{>noAuth}}
+    {{/if}}
+</template>
+<template name="loginTemplate">
+    {{>yield}}
+</template>

@@ -1,0 +1,56 @@
+<template name="overrideModal">
+        <a href="/"><img class="mb-4" src="/img/mLogo.png" alt="" width="65" height="65"></a>
+      <h1 class="h3 mb-3 font-weight-normal nanum">로그인 및 회원가입</h1>
+  </template>
+  <template name='overrideModalButton'>
+  <br><br>
+ <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+  </template>
+  <template name="overrideSignUpLink">
+      <div class="at-signup-link">
+          <br><br>
+      <p class="text-center">
+        가입하셨나요?
+        <a href="{{signUpLink}}" id="at-signUp" class="at-link at-signup {{disabled}}">회원가입</a>
+        {{suffText}}
+      </p>
+    </div>
+  </template>
+  <template name="overrideSignInLink">
+     
+       <div class="at-signin-link ">
+      <br><br>
+      <p class="text-center">
+        이미 회원가입하셨나요?
+        <a href="{{signInLink}}" id="at-signIn" class="at-link at-signin {{disabled}}">로그인해주세요!</a>
+         {{suffText}}</p>
+    </div>
+      
+  </template>
+  <template name="overrideAtError">
+      <div class="at-error">
+          {{#if error}}
+        <p class="text-red text-center">로그인 실패</p>
+      {{/if}}
+      {{#each error}}
+        <p style="display:none;">{{errorText}}</p>
+      {{/each}}
+    </div>
+  </template>
+  <template name="overrideInput">
+        <div class="at-input {{#if isValidating}}validating{{/if}} {{#if hasError}}has-error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if feedback}}has-feedback{{/if}}">
+             <label for="at-field-{{_id}}" class="sr-only"> {{displayName}} {{#unless required}}{{optionalText}}{{/unless}}</label>
+      <input type="{{type}}" class="form-control" id="at-field-{{_id}}" name="at-field-{{_id}}" placeholder="{{displayName}}" autocapitalize="none" autocorrect="off" required autofocus>
+          
+          
+            {{#if showLabels}}
+           
+          {{/if}}
+            {{#if hasIcon}}
+                <span class="{{iconClass}}"></span>
+            {{/if}}
+            {{#if hasError}}
+              <span>{{errorText}}</span>
+            {{/if}}
+        </div>
+  </template>

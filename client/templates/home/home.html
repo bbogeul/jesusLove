@@ -1,184 +1,116 @@
-
 <template name="home">
-{{>homeSlider}}
- 
-  <section  class="">
-    <div class="row ivcsdBack2" style="width:100%;">
-           <div class="col s12 m12  l8 offset-l2    wow fadeInRight"  style="min-height:330px;max-height:690px;background:#ffffff">
-    
-        <div class="container">
-                       <div class="center">
-                          
-                           <img src="/img/mLogo.png" class="hide-on-med-and-down" width="50px" alt="">
-                       </div>
-                       <br>
-
-                        <h2  class="patua center hide-on-med-and-down" style="color:#212224;margin-top: -.3em;">주사랑교회</h2>
-                  <p class="helvetica center"   style="color:#073f4c">주님을 사랑하고, 주님께 사랑받고, 주님께 받은 사랑을 이웃과 민족과 열방 가운데
-
- 
-
-나누고 싶은 중심으로 1996년 3월 19일 경기도 고양시 화정동에서 시작된 교회입니다.
-
-
-
-이 땅 위에 하나님의 거룩하신 이름을 회복해 드리는 교회이고 싶습니다!
-
- 
-
-이 땅 위에 하나님의 영광과 하나님의 기쁨이 되고 싶은 교회이고 싶습니다.!
-
- 
-
-이 땅 위에 그리스도의 흔적만을 남기는 교회이고 싶습니다!
-
- 
-
-주님 오실 때까지 변함없이 사랑과 충성을 주께 드리는 교회이고 싶습니다!
-
-
-
-하나님의 마음을 시원케 해드리는 그런 교회이고 싶습니다!
-
-</p>
-                 <br>
-            <a href="{{pathFor 'intro'}}"   class="newbutton btn-4 pt center">더 알아보기</a>
-                   </div>
-        </div>
-           
-        </div>
-    </section>
-<br>
-     <div class="parallax-container " style="height:420px;margin-top:-1.32em;">
-      <div class="parallax"><img src="/img/churchPics/sharon.jpeg" alt=""></div>
-      <div class="container"> 
-      <div class="center">
-       
-       
-      </div>
-      </div>
-    </div>
-<section class="grey darken-4" style="padding:1em;">
-    <div class="container">
-        <div class="row">
-            <h2 class="white-text patua">샤론 찬양대</h2>
-          
-            <a href="{{pathFor 'sharon'}}" class="teal-text text-lighten-2" style="font-size: 1.4em;font-weight: 700">샤론찬양대 지금 만나보세요</a>
-            <br>
-        </div>
-    </div>
-</section>
-   <div class="parallax-container " style="height:420px;margin-top:-1.32em;">
-      <div class="parallax"><img src="/img/soccer1.jpg" alt=""></div>
-      <div class="container"> 
-      <div class="center">
-       
-       
-      </div>
-      </div>
-    </div>
-<section class="grey darken-4" style="padding:1em;">
-    <div class="container">
-        <div class="row">
-            <h2 class="white-text patua  ">Hallelujah 축구단</h2>
-           
-            <a href="http://cafe.daum.net/lovejsr/XoZ6" class="   teal-text text-lighten-2" style="font-size: 1.4em;font-weight: 700">할렐루야 축구단원들을 지금 만나보세요</a>
-            <br>
-        </div>
-    </div>
-</section>
-</template>
-<template name="temporary">
-     <section  class="show-on-large-only hide-on-med-and-down">
-    <div class="row ivcsdBack2" style="width:100%;">
-             <div class="col s12 m12  l6    wow fadeInLeft"  style="height:400px;background:#ffffff">
-    
-        <div class="container">
-                        <h4  class="patua" style="color:#212224"> </h4>
-                 
-                   </div>
-        </div>
-        <div class="col s12 m12 l6 ivcsdBack wow fadeInRight"  style="height:400px;background:#2662d3">
- 
-        <div class="container">
-              <h1 style="font-size: 14em;" class="din white-text center"  > <b class=" great">Faith</b></h1>
-            <p class="helvetica  white-text"></p>
-            
+    <header class="masthead text-center d-flex">
+        <div class="container my-auto">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <h1 style="margin-top:-2em;" class="text-uppercase wow fadeInDown">
+                <strong>주사랑교회에 오신 것을 환영합니다</strong>
+              </h1>
+              <hr>
             </div>
-        </div>
-         
-        </div>
-    </section>
-</template>
-<template name="homeSlider">
-          <div class="parallax-container hide-on-large-only" style="height:420px;">
-      <div class="parallax"><img src="/img/background.png" alt=""></div>
-      <div class="container">
-      <div class="center">
-        <br><br>
-         <h1  class="robotoIt grey-text text-darken-3" style="margin-top:0.8em;">주사랑교회 <br> 오신 것을 <br>환영합니다</h1>
-         
-    
-      </div>
-      </div>
-    </div>
-       <div class="slider hide-on-med-and-down">
-    <ul class="slides">
-        <li>
-        <img src="/img/background.png"> <!-- random image -->
-        <div class="caption center-align ">
-             <div class="row">
-            <div class="col s10 m8 l6 offset-s1 offset-m2 offset-l3">
-               <div class="center">
-                   <h1  class="robotoIt grey-text text-darken-3" style="margin-top:0.8em;">주사랑교회 <br> 오신 것을 <br>환영합니다</h1>
-               </div>
-                 <br>
-         <div class="center">
-           <a href="{{pathFor 'sermon1'}}" class="newbutton btn-4 pt center ">주일예배 정보 보기</a>
-         </div>
-           
-               
+            <div class="col-lg-8 mx-auto">
+              <p class=" mb-5"><b>1996년 3월 19일 창립</b></p>
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{pathFor 'about'}}">더 알아보기</a>
             </div>
+          </div>
         </div>
-        </div>
-      </li>
-        <li>
-        <img src="/img/congrats.png"> <!-- random image -->
-        <div class="caption center-align ">
-             <div class="row">
-            <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2">
-               <div class="center">
-                   <h1 class="myeong grey-text text-darken-3">교회 <span class="red-text text-lighten-1">설립 22</span>주년</h1>
-                   <p class="  grey-text text-darken-3">Since 1996 3월 19일</p>
-               </div>
-                
-           
-               
-            </div>
-        </div>
-        </div>
-      </li>
+      </header>
      
-       <li>
-        <img src="/img/flower.jpg"> <!-- random image -->
-   <div class="caption left-align">
-       <h1 class="nanumBrush"><span class="blue-text text-lighten-2">성경적 가치로</span><br>세상을 지배하라!</h1>
-      
-          <h5 class="light grey-text text-lighten-3">세상을 <b class="blue-text text-lighten-2  text-shad">리드하는</b> 그리스도의 제자</h5>
-          <br>
-          <p class="flow-text merri grey-text text-lighten-3 text-shad">Raising <b class="blue-text text-lighten-2">Global Leaders</b> through Faith</p>
+      <section class="bg-image-home overlay" id="about">
+          <div class="">  
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto text-center middleHome wow zoomIn">
+                <h2 class="section-heading text-white">새가족분들 환영합니다!</h2>
+                <hr class="light my-4">
+                <p class="text-white mb-4">신앙생활을 처음 시작하시는 분들, 이사 혹은 개인적인 사유로 인해 다른 교회에서  오신분들, 그리고 개종하신 분들이 주사랑교회에서 등록을 하고 신앙생활을 하시길 원하시는 모든 분들 환영합니다!</p>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">오시는 길!</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </li>
-           
-                <li>
-        <img src="/img/eagle.jpg"> <!-- random image -->
-   <div class="caption right-align">
-   <h2 class="hannari text-shad grey-text text-lighten-3"><span class="">독수리의 날개치며</span><br>올라감 같을 것이요</h2>
-       <h5 class="jeju text-shad grey-text text-lighten-2">달음박질하여도 곤비치 아니하겠고<br> 걸어가도 피곤치 아니하리로다</h5><br>
-       <p class="merri">이사야 40장, 31절 말씀</p>
-        </div>
-      </li>
-    </ul>
+        </section>
+     <div class="sectionDiv">
+        <div class="container">
+            <div class="row">
+         <div class="col-sm-12 col-md-4 col-lg-4">
+  <h3 class="nanum text-center">최근 QT 말씀 보기</h3>
+  <hr>
+         {{#each newestQt}}
+           <div class="card text-center">
+ 
+  <div class="card-body">
+    <h5 class="card-title"> {{verse}}</h5>
+    <p class="card-text text-truncate">{{explanation}}</p>
+    <a href="{{pathFor 'qtView.show'}}" class="btn btn-primary">보기</a>
+  </div>
+  <div class="card-footer text-muted">
+ {{dateInput}}
+  </div>
+</div>
+          {{else}}
+           {{/each}}
+           <br>
+            <div class="text-center">
+               <a href="{{pathFor 'qt'}}" class="btn btn-primary btn-block">더 보기</a>
+           </div>
+           <br>
+         </div>
+         <div class="col-sm-12 col-md-4 col-lg-4">
+           <h3 class="nanum text-center">최근 기도제목 보기</h3>
+           <hr>
+           {{#each newestPrayer}}
+           <div class="card text-center">
+ 
+  <div class="card-body">
+    <h5 class="card-title"> {{title}}</h5>
+    <p class="card-text text-truncate">{{words}}</p>
+    <a href="{{pathFor 'prayer.show'}}" class="btn btn-primary">보기</a>
+  </div>
+  <div class="card-footer text-muted">
+ {{createdAt}}
+  </div>
+</div>
+          {{else}}
+           {{/each}}
+           <br>
+           <div class="text-center">
+              <a href="{{pathFor 'prayerList'}}" class="btn btn-primary btn-block">더 보기</a>
+          </div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4">
+           <h3 class="nanum text-center">최근 부른 찬양 보기</h3>
+           <hr>
+           {{#each newestSharon}}
+           <div class="card text-center">
+ 
+  <div class="card-body">
+    <h5 class="card-title"> {{title}}</h5>
+    <p class="card-text text-truncate">{{note}}</p>
+    <a href="{{pathFor 'sharon.show'}}" class="btn btn-primary">보기</a>
+  </div>
+  <div class="card-footer text-muted">
+ {{dateInput}}
+  </div>
+</div>
+          {{else}}
+           {{/each}}
+           <br>
+           <div class="text-center">
+               <a href="{{pathFor 'sharonPage'}}" class="btn btn-primary btn-block">더 보기</a>
+           </div>
+           <br>
+            </div>
+            </div>
+          </div>
+     </div>
+  <div class="parallax1">
+    <h1 class="parallax-text"></h1>
+  </div>
+  <div class="sectionDiv">
+    <div class="container">
+      <h1 class="nanum text-center">할렐우야 축구단</h1>
+      <hr>
+    </div>
   </div>
 </template>
-

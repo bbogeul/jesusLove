@@ -1,0 +1,31 @@
+<template name="inputQt">
+    <div class="container" style="margin-top: 7em">
+       
+       <div class="card">
+          
+           <div class="card-body">
+                <div class="card-title">
+               <h2 class="nanum">큐티 올리기</h2>
+           </div>
+                {{#autoForm collection="qtWords"
+      id="insertQtForm"
+      type="method"
+      meteormethod="submitQt"
+      omitFields="createdAt" autosave="false"}}
+        {{> afQuickField name='verse'}}
+        <br>
+        {{> afQuickField name="explanation"}}
+        <br>
+         <label for="note">본문해설</label>
+       {{> afFieldInput id="note" name='words' type="textarea" class=""}}
+       <br>
+       {{> afQuickField name="dateInput"}}
+          <br>
+        <div class="text-center" style="margin-top:1em;">
+            <button type="submit" class="btn-success btn">제출</button>
+        </div>
+        {{/autoForm}}
+           </div>
+       </div>
+    </div>
+</template>

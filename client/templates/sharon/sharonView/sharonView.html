@@ -1,81 +1,20 @@
 <template name="sharonView">
-    <div class="container">
-        <div class="center">
-            <h1 >{{title}}</h1>
-            <div class="divider"></div>
-               <br>
-                {{#if youtubeLink}}
-       <div class="container">
-            <iframe  src="https://www.youtube.com/embed/{{youtubeLink}}" frameborder="0" allowfullscreen></iframe>
-       </div>
+    <div class="container" style="margin-top:7rem">
+        <h1 class="nanum text-center wow fadeInDown">{{title}}</h1>
+        <hr class="wow zoomIn">
+        <p class="text-center">찬양 날짜: {{dateInput}}</p>
+        <br>
+        {{#if youtubeLink}}
+        <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{youtubeLink}}" allowfullscreen></iframe>
+</div>
         {{else}}
-        <div class="center">
-            {{#if isInRole 'admin'}}
-            비디오가 없습니다
-            {{else}}
-            {{/if}}
+        <div class="text-center">
+            <p class="text-red nanum">비디오가 없습니다.</p>
         </div>
         {{/if}}
-            <p>찬양할 날짜: {{dateInput}}</p>
-            {{#if note}}
-            <p class="flow-text">주의사항: <br>{{{note}}}</p>
-            {{else}}
-            {{/if}}
-            <br>
-            {{#if linkForScript}}
-            <a target="_blank" href="{{linkForScript}}"><p class="flow-text">악보링크</p></a>
-            {{else}}
-            {{/if}}
-        </div>
-    {{#if isInRole 'admin'}}
-    <div class="center">
-        <a href="{{pathFor 'sharonView.show'}}" class="btn blue">수정하기</a>
+        <br>
+        <p>주의사항:</p>
+        <p>{{note}}</p>
     </div>
-    {{else}}
-    {{/if}}
-    <br><br>
-    </div>
-</template>
-<template name="sharonEdit">
-    {{#if isInRole 'admin'}}
-    <div class="container">
-        <div class="center">
-            <p class="flow-text">악보를 추가하세요</p>
-        </div>
-          {{#autoForm collection="SharonNews"
-      id="updateSharonForm"
-       type="update" doc=this}}
-      
-        <div class="">
-        {{> afQuickField name='title'}}
-    </div>
-     <div class="input-field">
-      <label for="#note">주의사항</label>
-        {{> afFieldInput id="note" name='note' type="textarea" class="materialize-textarea"}}
-    </div>
-     <div class="">
-        {{> afQuickField name='linkForScript'}}
-    </div>
-     <div class="">
-       <div class="center">
-           *유투브 특성상 비디오 URL를 공유하고 싶으시면 https://www.youtube.com/watch?v=(ID)에 (ID) 부분만 복사하시면 됩니다.
-       </div>
-        {{> afQuickField name='youtubeLink'}}
-    </div>
-        <div class="">
-        {{> afQuickField name='dateInput'}}
-    </div>
-        <div class="center" style="margin-top:1em;">
-            <button type="submit" class="btn blue white-text">제출</button>
-        </div>
-      {{/autoForm}}
-      <br>
-      <br>
-      <br>
-    </div>
- 
-   
-        {{else}}
-    {{>noAuth}}
-      {{/if}}
 </template>
