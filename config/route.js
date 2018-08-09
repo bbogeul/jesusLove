@@ -77,7 +77,8 @@ Router.route('/sharon-view/:_id', function () {
   var item = SharonNews.findOne({_id: this.params._id});
   this.render('sharonView', {data: item});
 }, {
-  name: 'sharon.show'
+  name: 'sharon.show',
+  title: "악보 보기"
 });
 Router.route('/qt-view', 'qtListing');
 Router.route('/qt-view/:_id', function () {
@@ -95,7 +96,8 @@ Router.route('/prayer-view/:_id', function () {
   var item = PrayerList.findOne({_id: this.params._id});
   this.render('prayerView', {data: item});
 }, {
-  name: 'prayer.show'
+  name: 'prayer.show',
+  title: "기도제목 보기"
 });
 
 

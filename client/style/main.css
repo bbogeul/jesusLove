@@ -37,6 +37,10 @@ a:hover {
     width: 150px; 
 }
 
+.grey-text {
+  color: rgb(58, 58, 58);
+}
+
 h1,
 h2,
 h3,
