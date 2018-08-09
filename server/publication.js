@@ -4,3 +4,4 @@ publishPagination(SharonNews);
 publishPagination(qtWords);
 publishPagination(PrayerList);
 publishPagination(ChurchNews);
+publishPagination(Meteor.users);

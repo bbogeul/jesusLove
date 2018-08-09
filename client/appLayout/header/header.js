@@ -1,4 +1,5 @@
 Template.header.rendered = function() {
+  new WOW().init({ mobile:    false}); 
     var navbarCollapse = function() {
         if ($("#mainNav").offset().top > 100) {
           $("#mainNav").addClass("navbar-shrink");

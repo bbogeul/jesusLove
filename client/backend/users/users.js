@@ -19,7 +19,7 @@ isAdmin: function () {
    return Roles.userIsInRole(this._id, 'normal');
 },
 dateFormat: function() {
-   return moment(this.createdAt).format('MMMM D YYYY');
+   return moment(this.createdAt).format('M월 D일 YYYY');
 }
 });
 Template.Users.events({
